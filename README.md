@@ -1,12 +1,13 @@
-1. Create folder structure
-   1. create root folder as my-house
-   2. add frontend and back end folders
-   3. create src folder in frontend
-   4. create index.html
-   5. run npm init in frontend folder
-   6. npm install live server
-   7. add start script for live-server
-   8. run npm start
-   9. create project github repository
-   10. run npm init in root folder
-   11. commit first commit
+1. Design Website
+   1. install node-sass
+   2. create folder styles
+   3. create styles folder structure
+   4. create script watch:sass
+   5. link main.css to index.html
+   6. create folder images in src
+   7. import icons for header from figma template
+   8. create div.grid-container
+   9. create header, main and footer
+   10. add google fonts
+   11. style html, body
+   12. style grid-container, header, main and footer
