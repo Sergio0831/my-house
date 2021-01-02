@@ -13,15 +13,38 @@ body {
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header"
+    "nav"
     "main"
     "footer";
   grid-template-columns: 1fr;
@@ -32,10 +55,11 @@ a {
 .container {
   width: 100%;
   max-width: 1150px;
+  margin: 0 auto;
 }
 
-header {
-  grid-area: header;
+nav {
+  grid-area: nav;
   background: $lightColor;
   .container {
     height: 100%;
@@ -47,9 +71,17 @@ header {
   }
 }
 
-.header__links {
+.icons-list {
   display: flex;
   column-gap: 2rem;
+}
+
+main {
+  grid-area: main;
+}
+
+section {
+  margin-top: 5rem;
 }
 
 footer {

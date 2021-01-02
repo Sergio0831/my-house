@@ -1,0 +1,38 @@
+.our-products {
+  padding: 0 1rem;
+  &__title {
+    text-align: center;
+    font-family: $textFont;
+    font-size: 3.6rem;
+    line-height: 4.3rem;
+    letter-spacing: $mainSpacing;
+    color: $darkColor;
+  }
+  .products-filter {
+    margin-top: 1.7rem;
+    margin-bottom: 3rem;
+    display: flex;
+    column-gap: 1rem;
+    &__btn {
+      padding: 0.8rem 2.3rem;
+      background: $lightGray;
+      border-radius: 2rem;
+      border: none;
+      cursor: pointer;
+      transition: $mainTransition;
+      font-family: $textFont;
+      color: $darkColor;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      &:hover {
+        background: $darkGray;
+      }
+    }
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-content: center;
+    grid-gap: 3rem;
+  }
+}

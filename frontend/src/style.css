@@ -11,25 +11,45 @@ body {
   margin: 0;
   padding: 0; }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; }
+
 a {
   display: inline-block;
   text-decoration: none; }
 
+li {
+  list-style: none; }
+
+ul,
+li {
+  margin: 0;
+  padding-inline-start: 0; }
+
+button {
+  cursor: pointer; }
+
 .grid-container {
   display: grid;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "nav" "main" "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 6rem 1fr 19rem;
   height: 100%; }
 
 .container {
   width: 100%;
-  max-width: 1150px; }
+  max-width: 1150px;
+  margin: 0 auto; }
 
-header {
-  grid-area: header;
+nav {
+  grid-area: nav;
   background: #fff; }
-  header .container {
+  nav .container {
     height: 100%;
     padding: 0 1rem;
     margin: auto;
@@ -37,10 +57,137 @@ header {
     justify-content: space-between;
     align-items: center; }
 
-.header__links {
+.icons-list {
   display: flex;
   column-gap: 2rem; }
+
+main {
+  grid-area: main; }
+
+section {
+  margin-top: 5rem; }
 
 footer {
   grid-area: footer;
   background: #e5e5e5; }
+
+.hero {
+  min-height: calc(90vh - 60px);
+  background: url("./images/hero-img.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .hero .banner {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.55);
+    display: inline-block;
+    padding: 2rem 2.3rem;
+    border-radius: 0.5rem; }
+    .hero .banner__title {
+      font-size: 3.4rem;
+      font-family: "Lato", sans-serif;
+      font-size: 3.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      margin-bottom: 3rem; }
+    .hero .banner__btn {
+      padding: 1.2rem 4.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      font-size: 1rem;
+      background: #ea4f3d;
+      color: #111;
+      border-radius: 0.5rem;
+      border: 1px solid #ea4f3d;
+      transition: all 0.2s linear;
+      cursor: pointer; }
+      .hero .banner__btn:hover {
+        background: transparent;
+        color: #fff; }
+
+.our-products {
+  padding: 0 1rem; }
+  .our-products__title {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 3.6rem;
+    line-height: 4.3rem;
+    letter-spacing: 0.5rem;
+    color: #111; }
+  .our-products .products-filter {
+    margin-top: 1.7rem;
+    margin-bottom: 3rem;
+    display: flex;
+    column-gap: 1rem; }
+    .our-products .products-filter__btn {
+      padding: 0.8rem 2.3rem;
+      background: #f5f5f5;
+      border-radius: 2rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      font-family: "Lato", sans-serif;
+      color: #111;
+      font-size: 1.2rem;
+      line-height: 1.4rem; }
+      .our-products .products-filter__btn:hover {
+        background: #e5e5e5; }
+  .our-products .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-content: center;
+    grid-gap: 3rem; }
+
+.product {
+  transition: all 0.2s linear; }
+  .product .img-container {
+    position: relative;
+    overflow: hidden; }
+    .product .img-container a {
+      width: 100%; }
+  .product__img {
+    transition: all 0.2s linear;
+    min-width: 100%; }
+  .product__icons {
+    position: absolute;
+    padding: 0.5rem 0;
+    bottom: 0;
+    background-color: #ea4f3d;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    transform: translateY(101%);
+    transition: all 0.2s linear; }
+    .product__icons button {
+      border: none;
+      background-color: transparent; }
+    .product__icons svg {
+      transition: all 0.2s linear; }
+      .product__icons svg:hover {
+        transform: scale(1.2); }
+  .product__name {
+    margin: 1rem 0;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    transition: all 0.2s linear;
+    font-weight: bold; }
+    .product__name a {
+      color: #111; }
+  .product__price {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: #111;
+    transition: all 0.2s linear;
+    font-weight: bold; }
+  .product:hover .product__img {
+    opacity: 0.5; }
+  .product:hover .product__icons {
+    transform: translateY(0); }
+  .product:hover .product__name a {
+    color: #ea4f3d; }
+  .product:hover .product__price {
+    color: #ea4f3d; }
