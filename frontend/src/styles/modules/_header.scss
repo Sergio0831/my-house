@@ -1,5 +1,5 @@
 .hero {
-  min-height: calc(90vh - 60px);
+  min-height: calc(80vh - 60px);
   background: url("./images/hero-img.png") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -19,16 +19,8 @@
       margin-bottom: 3rem;
     }
     &__btn {
-      padding: 1.2rem 4.2rem;
-      text-transform: uppercase;
-      letter-spacing: $mainSpacing;
-      font-size: 1rem;
-      background: $primaryColor;
+      padding: 1.2rem 5rem;
       color: $darkColor;
-      border-radius: $mainRadius;
-      border: 1px solid $primaryColor;
-      transition: $mainTransition;
-      cursor: pointer;
       &:hover {
         background: transparent;
         color: $lightColor;

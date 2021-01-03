@@ -34,6 +34,26 @@ li {
 button {
   cursor: pointer; }
 
+.btn {
+  background: #ea4f3d;
+  border-radius: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  border: 1px solid #ea4f3d;
+  transition: all 0.2s linear;
+  letter-spacing: 0.1em; }
+
+.section-title {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 3.6rem;
+  line-height: 4.3rem;
+  letter-spacing: 0.1em;
+  color: #111; }
+
 .grid-container {
   display: grid;
   grid-template-areas: "nav" "main" "footer";
@@ -72,7 +92,7 @@ footer {
   background: #e5e5e5; }
 
 .hero {
-  min-height: calc(90vh - 60px);
+  min-height: calc(80vh - 60px);
   background: url("./images/hero-img.png") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -88,32 +108,17 @@ footer {
       font-family: "Lato", sans-serif;
       font-size: 3.6rem;
       text-transform: uppercase;
-      letter-spacing: 0.5rem;
+      letter-spacing: 0.1em;
       margin-bottom: 3rem; }
     .hero .banner__btn {
-      padding: 1.2rem 4.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5rem;
-      font-size: 1rem;
-      background: #ea4f3d;
-      color: #111;
-      border-radius: 0.5rem;
-      border: 1px solid #ea4f3d;
-      transition: all 0.2s linear;
-      cursor: pointer; }
+      padding: 1.2rem 5rem;
+      color: #111; }
       .hero .banner__btn:hover {
         background: transparent;
         color: #fff; }
 
 .our-products {
   padding: 0 1rem; }
-  .our-products__title {
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    font-size: 3.6rem;
-    line-height: 4.3rem;
-    letter-spacing: 0.5rem;
-    color: #111; }
   .our-products .products-filter {
     margin-top: 1.7rem;
     margin-bottom: 3rem;
@@ -126,6 +131,7 @@ footer {
       border: none;
       cursor: pointer;
       transition: all 0.2s linear;
+      letter-spacing: 0.1em;
       font-family: "Lato", sans-serif;
       color: #111;
       font-size: 1.2rem;
@@ -137,6 +143,15 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     justify-content: center;
     grid-gap: 3rem; }
+  .our-products .btn-wrapper {
+    margin-top: 3rem;
+    text-align: center; }
+  .our-products__btn {
+    padding: 1rem 4rem;
+    color: #fff; }
+    .our-products__btn:hover {
+      background: transparent;
+      color: #111; }
 
 .product {
   transition: all 0.2s linear; }
@@ -172,6 +187,7 @@ footer {
     font-size: 1.4rem;
     line-height: 1.7rem;
     transition: all 0.2s linear;
+    letter-spacing: 0.1em;
     font-weight: bold; }
     .product__name a {
       color: #111; }
