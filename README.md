@@ -1,1 +1,1 @@
-7. Load Products From Backend
+8. Add Webpack
