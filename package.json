@@ -1,0 +1,24 @@
+{
+  "name": "my-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergio0831/my-house.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergio0831/my-house/issues"
+  },
+  "homepage": "https://github.com/Sergio0831/my-house#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
