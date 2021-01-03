@@ -1,1 +1,1 @@
-6.  Create Node.js Server
+7. Load Products From Backend
