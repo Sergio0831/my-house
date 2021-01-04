@@ -1,1 +1,1 @@
-9. Install ESLint and VSCode extensions
+10. Product Screen
