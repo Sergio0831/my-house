@@ -52,6 +52,11 @@ button {
   border: 1px solid $primaryColor;
   transition: $mainTransition;
   letter-spacing: $mainSpacing;
+  color: $lightColor;
+  &:hover {
+    background: transparent;
+    color: $darkColor;
+  }
 }
 
 .section-title {

@@ -9,7 +9,9 @@
   }
   &__img {
     transition: $mainTransition;
-    min-width: 100%;
+    width: 100%;
+    display: block;
+    height: 19.5rem;
   }
   &__icons {
     position: absolute;

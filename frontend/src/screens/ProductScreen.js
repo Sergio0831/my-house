@@ -8,7 +8,19 @@ const ProductScreen = {
     if (product.error) {
       return `<div>${product.error}</div>`;
     }
-    return `<h1>${product.name}</h1>`;
+    return `
+    <div class="container">
+      <div class="breadcrumbs">
+          <a class="breadcrumbs__link" href="/#/">Home</a>
+          <span class="breadcrumbs__link">${product.name}</span>
+        </div>
+      <div class="details">
+        <div class="details__image">
+        <img src="${product.image}" alt="${product.name}"/>
+        </div>        
+      </div>
+    </div>
+    `;
   },
 };
 export default ProductScreen;

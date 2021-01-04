@@ -1,6 +1,6 @@
 .hero {
   min-height: calc(80vh - 60px);
-  background: url("./images/hero-img.png") center/cover no-repeat;
+  background: url("../images/hero-img.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,11 +20,6 @@
     }
     &__btn {
       padding: 1.2rem 5rem;
-      color: $darkColor;
-      &:hover {
-        background: transparent;
-        color: $lightColor;
-      }
     }
   }
 }
