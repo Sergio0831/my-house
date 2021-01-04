@@ -1,1 +1,1 @@
-9. Install Babel For ES6 Syntax
+9. Install ESLint and VSCode extensions

@@ -1,6 +1,7 @@
+/* eslint-disable linebreak-style */
 import express from "express";
 import cors from "cors";
-import data from "./data.js";
+import data from "./data";
 
 const app = express();
 app.use(cors());
