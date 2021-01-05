@@ -1,0 +1,31 @@
+.breadcrumbs {
+  margin: 4rem 0;
+  padding-left: 1rem;
+  &__link {
+    font-family: $textFont;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: rgba(0, 0, 0, 0.2);
+    padding-right: 1.6rem;
+    margin-right: 1rem;
+    position: relative;
+    transition: $mainTransition;
+    &::after {
+      content: url("../images/single-product-screen/right-arrow.svg");
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:last-child {
+      padding-right: 0;
+      margin-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  a:hover {
+    color: $primaryColor;
+  }
+}

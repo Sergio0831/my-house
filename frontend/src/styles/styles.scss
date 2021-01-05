@@ -1,5 +1,8 @@
 @import "./base/variables";
 @import "./base/default";
+@import "./base/buttons";
 @import "./modules/header";
-@import "./sections/our-products";
 @import "./modules/product";
+@import "./modules/breadcrumbs";
+@import "./modules/single-product";
+@import "./sections/our-products";

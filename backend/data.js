@@ -6,6 +6,7 @@ export default {
       category: "Bedroom",
       image: "images/products/product-1.jpeg",
       price: 585,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 4,
     },
     {
@@ -14,6 +15,7 @@ export default {
       category: "Kitchen",
       image: "images/products/product-2.jpg",
       price: 3800,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 2,
     },
     {
@@ -22,6 +24,7 @@ export default {
       category: "Office",
       image: "images/products/product-3.jpg",
       price: 250,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 8,
     },
     {
@@ -30,6 +33,7 @@ export default {
       category: "Living Room",
       image: "images/products/product-4.jpg",
       price: 150,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 14,
     },
     {
@@ -38,6 +42,7 @@ export default {
       category: "Baby Room",
       image: "images/products/product-5.jpg",
       price: 600,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 0,
     },
     {
@@ -46,6 +51,7 @@ export default {
       category: "Kitchen",
       image: "images/products/product-6.jpg",
       price: 750,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 8,
     },
     {
@@ -54,6 +60,7 @@ export default {
       category: "Living Room",
       image: "images/products/product-7.jpg",
       price: 150,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 6,
     },
     {
@@ -62,6 +69,7 @@ export default {
       category: "Bedroom",
       image: "images/products/product-8.jpeg",
       price: 845,
+      description: "Very comfortable bed, with good quality and materials",
       countInStock: 3,
     },
   ],

@@ -5,6 +5,7 @@
 html {
   font-size: 62.5%; // 16px * 62.5 = 10px = 1rem
   scroll-behavior: smooth;
+  font-family: $textFont;
 }
 
 body {
@@ -18,7 +19,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
 }
 
@@ -35,28 +37,6 @@ ul,
 li {
   margin: 0;
   padding-inline-start: 0;
-}
-
-button {
-  cursor: pointer;
-}
-
-.btn {
-  background: $primaryColor;
-  border-radius: $mainRadius;
-  font-family: $textFont;
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  text-transform: uppercase;
-  border: 1px solid $primaryColor;
-  transition: $mainTransition;
-  letter-spacing: $mainSpacing;
-  color: $lightColor;
-  &:hover {
-    background: transparent;
-    color: $darkColor;
-  }
 }
 
 .section-title {
