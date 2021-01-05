@@ -8,6 +8,9 @@ const ProductScreen = {
       document.location.hash = `/cart/${request.id}`;
     });
   },
+  displayBlock: (ul) => {
+    return (ul.style.display = "block");
+  },
   render: async () => {
     const request = parseRequestUrl();
     const product = await getProduct(request.id);
