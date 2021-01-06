@@ -7,10 +7,11 @@
   column-gap: 4.4rem;
   row-gap: 2rem;
   &__image {
+    max-width: 72rem;
     img {
-      max-width: 72rem;
       width: 100%;
       height: 100%;
+      object-fit: fill;
     }
   }
   &__info {
@@ -57,18 +58,42 @@
       color: rgba(55, 55, 55, 0.85);
     }
     &-amount {
-      display: flex;
-      column-gap: 0.6rem;
-      .product-amount {
-        margin-bottom: 4.3rem;
-        font-family: $numberFont;
-        font-size: 2rem;
-        line-height: 2.3rem;
-        color: $darkColor;
-      }
-      .amount-minus,
-      .amount-plus {
-        cursor: pointer;
+      margin-bottom: 3.4rem;
+      &__select {
+        position: relative;
+        width: 100%;
+        max-width: 7rem;
+        select {
+          font-size: 1.6rem;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          transform-origin: left center;
+          padding: 0.5rem 1.6rem 0.6rem 1.9rem;
+          border-radius: 0.5rem;
+          font-family: $numberFont;
+          outline: 0;
+          width: 100%;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          transition: $mainTransition;
+          &:hover {
+            border: 1px solid rgba(0, 0, 0, 0.7);
+          }
+          option {
+            font-style: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+          }
+        }
+        .dropdown-chevron {
+          position: absolute;
+          right: 1.3rem;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          height: 0.8rem;
+          width: 1.2rem;
+        }
       }
     }
     &-addBtn {

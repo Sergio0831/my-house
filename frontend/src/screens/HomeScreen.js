@@ -49,7 +49,7 @@ const HomeScreen = {
                 />
               </a>
               <div class="product__icons">
-                <div class="view">
+                <div class="view-button">
                   <a href="/#/product/${product._id}">
                     <svg
                       class="view__icon"
@@ -82,7 +82,7 @@ const HomeScreen = {
                     </svg>
                   </a>
                 </div>
-                <button class="cart">
+                <button class="cart-button">
                   <svg
                     width="20"
                     height="20"
@@ -111,7 +111,7 @@ const HomeScreen = {
                     </defs>
                   </svg>
                 </button>
-                <button class="favorite">
+                <button class="favorite-button">
                   <svg
                     width="20"
                     height="20"
