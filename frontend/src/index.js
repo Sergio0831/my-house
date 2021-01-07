@@ -5,6 +5,7 @@ import ProductScreen from "./screens/ProductScreen";
 import { parseRequestUrl } from "./utils";
 import CartScreen from "./screens/CartScreen";
 import SignInScreen from "./screens/SigninScreen";
+import Navbar from "./components/Navbar";
 
 if (module.hot) {
   module.hot.accept();
@@ -25,6 +26,9 @@ const router = async () => {
     (request.id ? "/:id" : "") +
     (request.verb ? `/${request.verb}` : "");
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
+  const navbar = document.getElementById("navbar-container");
+  navbar.innerHTML = await Navbar.render();
+  await Navbar.after_render();
   const main = document.getElementById("main-container");
   main.innerHTML = await screen.render();
   await screen.after_render();
