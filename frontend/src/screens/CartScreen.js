@@ -39,7 +39,6 @@ const CartScreen = {
       });
     });
     const removeButtons = document.getElementsByClassName("cart__name-remove");
-
     Array.from(removeButtons).forEach((removeButton) => {
       removeButton.addEventListener("click", () => {
         removeFromCart(removeButton.id);

@@ -21,6 +21,9 @@ const HomeScreen = {
       <div class="container">
             <h2 class="section-title">Our Products</h2>
             <div class="products-filter">
+              <button type="button" class="products-filter__btn active">
+                All
+              </button>
               <button type="button" class="products-filter__btn">
                 Living Room
               </button>

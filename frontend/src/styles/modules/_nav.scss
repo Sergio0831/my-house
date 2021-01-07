@@ -1,0 +1,32 @@
+nav {
+  grid-area: nav;
+  background: $lightColor;
+  .container {
+    height: 100%;
+    padding: 0 1rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.icons-list {
+  display: flex;
+  column-gap: 2rem;
+  .cart-icon {
+    position: relative;
+    &__number {
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: $primaryColor;
+      color: $lightColor;
+      font-family: $numberFont;
+      text-align: center;
+      bottom: 1.1rem;
+      left: 1.3rem;
+    }
+  }
+}
