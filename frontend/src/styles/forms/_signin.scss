@@ -1,0 +1,53 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .signin-form {
+    text-align: center;
+    &__items {
+      display: grid;
+      width: 32rem;
+      padding: 2rem;
+      border: 0.1rem solid rgba(0, 0, 0, 0.3);
+      border-radius: $mainRadius;
+      li {
+        display: grid;
+        margin: 1rem 0;
+        &:nth-child(3) {
+          margin-top: 0;
+        }
+        &:nth-child(4) {
+          margin-top: 2rem;
+        }
+        &:last-child {
+          margin-top: 0;
+        }
+      }
+    }
+    &__input {
+      padding: 1rem;
+      border-radius: $mainRadius;
+      border: 0.1rem solid rgba(0, 0, 0, 0.3);
+      font-size: 1.2rem;
+      font-family: $textFont;
+      background: $lightGray;
+    }
+    &__btn {
+      text-transform: capitalize;
+      padding: 1rem 0;
+    }
+    &__text {
+      font-size: 1.2rem;
+    }
+    &__link {
+      margin-left: 0.2rem;
+      color: $darkColor;
+      transition: $mainTransition;
+      font-size: 1.2rem;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+}

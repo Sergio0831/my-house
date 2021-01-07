@@ -4,6 +4,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import { parseRequestUrl } from "./utils";
 import CartScreen from "./screens/CartScreen";
+import SignInScreen from "./screens/SigninScreen";
 
 if (module.hot) {
   module.hot.accept();
@@ -14,6 +15,7 @@ const routes = {
   "/product/:id": ProductScreen,
   "/cart/:id": CartScreen,
   "/cart": CartScreen,
+  "/signin": SignInScreen,
 };
 
 const router = async () => {
