@@ -1,11 +1,10 @@
 .form-container {
-  background: url("../images/login-bg.jpg") no-repeat center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  .signin-form {
+  .form {
     text-align: center;
     background: rgba($color: $lightColor, $alpha: 0.8);
     border: 0.1rem solid rgba(0, 0, 0, 0.3);
@@ -17,15 +16,14 @@
 
       li {
         display: grid;
-        margin: 1rem 0;
-        &:nth-child(3) {
-          margin-top: 0;
+        .form__title {
+          margin-bottom: 2rem;
         }
-        &:nth-child(4) {
-          margin-top: 2rem;
+        .form__input {
+          margin-bottom: 0.5rem;
         }
-        &:last-child {
-          margin-top: 0;
+        .form__btn {
+          margin: 3rem 0 1rem;
         }
       }
     }
@@ -57,4 +55,12 @@
       }
     }
   }
+}
+
+.signin {
+  background: url("../images/login-bg.jpg") no-repeat center;
+}
+
+.register {
+  background: url("../images/register-bg.jpeg") no-repeat center;
 }
