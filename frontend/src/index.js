@@ -6,6 +6,7 @@ import { hideLoading, parseRequestUrl, showLoading } from "./utils";
 import CartScreen from "./screens/CartScreen";
 import SignInScreen from "./screens/SigninScreen";
 import Navbar from "./components/Navbar";
+import RegisterScreen from "./screens/RegisterScreen";
 
 if (module.hot) {
   module.hot.accept();
@@ -17,6 +18,7 @@ const routes = {
   "/cart/:id": CartScreen,
   "/cart": CartScreen,
   "/signin": SignInScreen,
+  "/register": RegisterScreen,
 };
 
 const router = async () => {
