@@ -14,3 +14,31 @@ export const rerender = async (component) => {
   ).innerHTML = await component.render();
   await component.after_render();
 };
+
+export const showLoading = () => {
+  const loadingOverlay = document.querySelector(".loading-overlay");
+  loadingOverlay.classList.add("active");
+};
+
+export const hideLoading = () => {
+  const loadingOverlay = document.querySelector(".loading-overlay");
+  loadingOverlay.classList.remove("active");
+};
+
+export const showMessage = (message, callback) => {
+  const messageOverlay = document.querySelector(".message-overlay");
+  messageOverlay.innerHTML = `
+  <div class="message-overlay__container">
+    <div class="message-overlay__content">${message}</div>
+    <button class="btn message-overlay__close-btn">OK</button>
+  </div>
+  `;
+  messageOverlay.classList.add("active");
+  const closeBtn = document.querySelector(".message-overlay__close-btn");
+  closeBtn.addEventListener("click", () => {
+    messageOverlay.classList.remove("active");
+    if (callback) {
+      callback();
+    }
+  });
+};

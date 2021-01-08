@@ -1,16 +1,20 @@
 .form-container {
+  background: url("../images/login-bg.jpg") no-repeat center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   .signin-form {
     text-align: center;
+    background: rgba($color: $lightColor, $alpha: 0.8);
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    border-radius: $mainRadius;
     &__items {
       display: grid;
       width: 32rem;
       padding: 2rem;
-      border: 0.1rem solid rgba(0, 0, 0, 0.3);
-      border-radius: $mainRadius;
+
       li {
         display: grid;
         margin: 1rem 0;
