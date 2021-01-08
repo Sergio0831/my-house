@@ -2,7 +2,7 @@ import { getProduct } from "../api";
 import { getCartItems, setCartItems } from "../localStorage";
 import { parseRequestUrl, rerender } from "../utils";
 
-const addToCart = (item, forceUpdate = false) => {
+export const addToCart = (item, forceUpdate = false) => {
   let cartItems = getCartItems();
   const existItem = cartItems.find((x) => x.product === item.product);
   if (existItem) {
@@ -29,9 +29,22 @@ const removeFromCart = (id) => {
   }
 };
 
+export const cartItemsTotal = () => {
+  const navBar = document.getElementById("navbar-container");
+  const cartIcon = navBar.querySelector(".cart-icon__number");
+  let cartItems = getCartItems();
+  cartIcon.innerHTML = `${cartItems.reduce((a, c) => a + c.qty, 0)}`;
+  if (getCartItems().length === 0) {
+    cartIcon.style.display = "none";
+  } else if (getCartItems().length > 0) {
+    cartIcon.style.display = "block";
+  }
+};
+
 const CartScreen = {
   after_render: () => {
     const qtySelects = document.getElementsByClassName("qty-select");
+    cartItemsTotal();
     Array.from(qtySelects).forEach((qtySelect) => {
       qtySelect.addEventListener("change", (e) => {
         const item = getCartItems().find((x) => x.product === qtySelect.id);
@@ -119,7 +132,9 @@ const CartScreen = {
       </ul>
       <hr/>
       <div class="cart__total">
-        <h2 class="total-text">Total:</h2>
+        <h2 class="total-text">Total:
+        Subtotal (${cartItems.reduce((a, c) => a + c.qty, 0)} items)
+        </h2>
         <p class="total-price">&euro;${cartItems.reduce(
           (a, b) => a + b.price * b.qty,
           0

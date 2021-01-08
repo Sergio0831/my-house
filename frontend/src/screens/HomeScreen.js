@@ -1,7 +1,20 @@
 import axios from "axios";
+import { getCartItems } from "../localStorage";
 import { hideLoading, showLoading } from "../utils";
+import { addToCart, cartItemsTotal } from "./CartScreen";
 
 const HomeScreen = {
+  after_render: () => {
+    const cartButtons = document.querySelectorAll(".cart-button");
+    Array.from(cartButtons).forEach((cartButton) => {
+      let id = cartButton.id;
+      cartButton.addEventListener("click", (e) => {
+        const item = getCartItems().find((x) => x.product === id);
+        addToCart({ item, qty: 1 }, false);
+        cartItemsTotal();
+      });
+    });
+  },
   render: async () => {
     showLoading();
     const response = await axios({
@@ -88,7 +101,7 @@ const HomeScreen = {
                     </svg>
                   </a>
                 </div>
-                <button class="cart-button">
+                <button class="cart-button" id="${product._id}">
                   <svg
                     width="20"
                     height="20"

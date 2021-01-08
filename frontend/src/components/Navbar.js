@@ -1,4 +1,4 @@
-import { getUserInfo } from "../localStorage";
+import { getCartItems, getUserInfo } from "../localStorage";
 
 const Navbar = {
   render: () => {
@@ -29,7 +29,7 @@ const Navbar = {
               <li class="icon">
                 <a href="/#/cart" class="icon-link cart-icon">
                   <img src="./images/header/cart-icon.svg" alt="cart" />
-                  <span class="cart-icon__number">1</span>
+                  <span class="cart-icon__number">0</span>
                 </a>
               </li>
               <li class="icon">
@@ -42,7 +42,14 @@ const Navbar = {
         </div>
     `;
   },
-  after_render: () => {},
+  after_render: () => {
+    const cartIcon = document.querySelector(".cart-icon__number");
+    let cartItems = getCartItems();
+    cartIcon.innerHTML = `${cartItems.reduce((a, c) => a + c.qty, 0)}`;
+    if (getCartItems().length === 0) {
+      cartIcon.style.display = "none";
+    }
+  },
 };
 
 export default Navbar;

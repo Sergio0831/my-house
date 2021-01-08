@@ -43,7 +43,7 @@ export default {
       image: "images/products/product-5.jpg",
       price: 600,
       description: "Very comfortable bed, with good quality and materials",
-      countInStock: 0,
+      countInStock: 5,
     },
     {
       _id: "6",
