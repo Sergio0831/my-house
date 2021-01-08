@@ -7,6 +7,7 @@ import CartScreen from "./screens/CartScreen";
 import SignInScreen from "./screens/SigninScreen";
 import Navbar from "./components/Navbar";
 import RegisterScreen from "./screens/RegisterScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 if (module.hot) {
   module.hot.accept();
@@ -19,6 +20,7 @@ const routes = {
   "/cart": CartScreen,
   "/signin": SignInScreen,
   "/register": RegisterScreen,
+  "/profile": ProfileScreen,
 };
 
 const router = async () => {
@@ -34,7 +36,7 @@ const router = async () => {
   Navbar.after_render();
   const main = document.getElementById("main-container");
   main.innerHTML = await screen.render();
-  await screen.after_render();
+  if (screen.after_render) await screen.after_render();
   hideLoading();
 };
 window.addEventListener("load", router);

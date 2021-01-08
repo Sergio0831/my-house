@@ -42,6 +42,10 @@
       text-transform: capitalize;
       padding: 1rem 0;
     }
+    .signout__btn {
+      text-transform: capitalize;
+      padding: 1rem 0;
+    }
     &__text {
       font-size: 1.2rem;
     }
@@ -62,5 +66,9 @@
 }
 
 .register {
-  background: url("../images/register-bg.jpeg") no-repeat center;
+  background: url("../images/register-bg.jpg") no-repeat center;
+}
+
+.profile {
+  background: url("../images/profile-bg.jpg") no-repeat center;
 }
