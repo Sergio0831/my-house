@@ -1,17 +1,38 @@
 import axios from "axios";
-import { getCartItems } from "../localStorage";
-import { hideLoading, showLoading } from "../utils";
-import { addToCart, cartItemsTotal } from "./CartScreen";
+import { hideLoading, showLoading, showMessage } from "../utils";
+import { addToCart } from "./CartScreen";
 
 const HomeScreen = {
   after_render: () => {
-    const cartButtons = document.querySelectorAll(".cart-button");
-    Array.from(cartButtons).forEach((cartButton) => {
-      let id = cartButton.id;
-      cartButton.addEventListener("click", (e) => {
-        const item = getCartItems().find((x) => x.product === id);
-        addToCart({ item, qty: 1 }, false);
-        cartItemsTotal();
+    const cartBtn = document.querySelectorAll(".cart-button");
+    cartBtn.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        if (e.target.parentElement.classList.contains("cart-button")) {
+          let image =
+            e.target.parentElement.parentElement.previousElementSibling
+              .children[0].src;
+          let name =
+            e.target.parentElement.parentElement.parentElement
+              .nextElementSibling.children[0].textContent;
+          let price =
+            e.target.parentElement.parentElement.parentElement
+              .nextElementSibling.nextElementSibling.textContent;
+          let finalPrice = price.slice(1).trim();
+          let id =
+            e.target.parentElement.parentElement.parentElement.parentElement.id;
+          let countInStock =
+            e.target.parentElement.parentElement.parentElement.parentElement
+              .dataset.countinstock;
+          const item = {
+            product: id,
+            name: name,
+            image: image,
+            price: Number(finalPrice),
+            countInStock: Number(countInStock),
+            qty: 1,
+          };
+          addToCart({ ...item, qty: 1 }, showMessage());
+        }
       });
     });
   },
@@ -58,7 +79,7 @@ const HomeScreen = {
               .map(
                 (product) => `
         <li>
-          <div class="product">
+          <div class="product" id="${product._id}" data-countInStock="${product.countInStock}">
             <div class="img-container">
               <a href="/#/product/${product._id}">
                 <img
@@ -102,7 +123,7 @@ const HomeScreen = {
                   </a>
                 </div>
                 <button class="cart-button" id="${product._id}">
-                  <svg
+                  <svg class="cart-button__icon"
                     width="20"
                     height="20"
                     viewBox="0 0 20 20"
