@@ -1,1 +1,1 @@
-16. Checkout Wizard
+17. Place Order Screen

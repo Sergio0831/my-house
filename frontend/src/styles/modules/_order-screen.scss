@@ -1,0 +1,76 @@
+.order {
+  width: 53rem;
+  max-width: 100%;
+  padding: 2rem 0 4rem;
+  margin: 0 auto;
+  &__title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  &__info-item {
+    padding: 2rem 1rem;
+    border: 0.1rem $gray solid;
+    border-radius: $mainRadius;
+    background: #fcfcfc;
+  }
+  &__info {
+    display: grid;
+    row-gap: 2rem;
+    &-info {
+      font-size: 1.6rem;
+    }
+  }
+  &__list {
+    display: grid;
+    row-gap: 3rem;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 0.1rem $gray solid;
+      &__link {
+        font-size: 1.6rem;
+        color: $darkColor;
+      }
+      &__qty {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .cart__list-item {
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  &__action {
+    margin-top: 2rem;
+    &-list {
+      display: grid;
+      row-gap: 1rem;
+      &__item {
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 1.6rem;
+          font-family: $numberFont;
+        }
+      }
+    }
+    &-btn {
+      width: 100%;
+      padding: 1.2rem 0;
+      text-transform: initial;
+      margin-top: 1.4rem;
+    }
+  }
+  &__total {
+    h3,
+    p {
+      color: $primaryColor;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .checkout-steps {
   display: flex;
   justify-content: space-between;
-  width: 40rem;
+  width: 53rem;
   margin: 2rem auto;
   div {
     border-top: 0.3rem rgba(0, 0, 0, 0.5) solid;
@@ -9,6 +9,9 @@
     flex: 1 1;
     padding-top: 1rem;
     font-size: 1.4rem;
+    p {
+      text-align: center;
+    }
     &.active {
       color: $primaryColor;
       border-color: $primaryColor;
