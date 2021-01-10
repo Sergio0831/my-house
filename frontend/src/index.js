@@ -8,6 +8,8 @@ import SignInScreen from "./screens/SigninScreen";
 import Navbar from "./components/Navbar";
 import RegisterScreen from "./screens/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import ShippingScreen from "./screens/ShippingScreen";
+import PaymentScreen from "./screens/PaymentScreen";
 
 if (module.hot) {
   module.hot.accept();
@@ -21,6 +23,8 @@ const routes = {
   "/signin": SignInScreen,
   "/register": RegisterScreen,
   "/profile": ProfileScreen,
+  "/shipping": ShippingScreen,
+  "/payment": PaymentScreen,
 };
 
 const router = async () => {

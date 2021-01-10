@@ -1,6 +1,6 @@
 import { getProduct } from "../api";
 import { getCartItems, setCartItems } from "../localStorage";
-import { parseRequestUrl, rerender } from "../utils";
+import { parseRequestUrl, redirectUser, rerender, showMessage } from "../utils";
 
 export const addToCart = (item, forceUpdate = false) => {
   let cartItems = getCartItems();
@@ -20,7 +20,7 @@ export const addToCart = (item, forceUpdate = false) => {
   }
 };
 
-const removeFromCart = (id) => {
+export const removeFromCart = (id) => {
   setCartItems(getCartItems().filter((x) => x.product !== id));
   if (id === parseRequestUrl().id) {
     document.location.hash = "/cart";
@@ -29,7 +29,7 @@ const removeFromCart = (id) => {
   }
 };
 
-export const cartItemsTotal = () => {
+const cartItemsTotal = () => {
   const navBar = document.getElementById("navbar-container");
   const cartIcon = navBar.querySelector(".cart-icon__number");
   let cartItems = getCartItems();
@@ -53,8 +53,12 @@ const CartScreen = {
     });
     const removeButtons = document.getElementsByClassName("cart__name-remove");
     Array.from(removeButtons).forEach((removeButton) => {
-      removeButton.addEventListener("click", () => {
-        removeFromCart(removeButton.id);
+      removeButton.addEventListener("click", (e) => {
+        const title =
+          e.target.parentElement.previousElementSibling.children[0].innerHTML;
+        const message = `${title}  was removed from your shopping bag`;
+        console.log(title);
+        showMessage(message, removeFromCart(removeButton.id));
       });
     });
     document.getElementById("checkout-button").addEventListener("click", () => {
@@ -80,7 +84,7 @@ const CartScreen = {
       <ul class="cart__list">
         ${
           cartItems.length === 0
-            ? `<div class="cart__message"><a href="/#/">Go Shopping</a></div>`
+            ? `<div class="cart__message"><a href="/">Go Shopping</a></div>`
             : cartItems
                 .map(
                   (item) => `
@@ -133,7 +137,6 @@ const CartScreen = {
       <hr/>
       <div class="cart__total">
         <h2 class="total-text">Total:
-        Subtotal (${cartItems.reduce((a, c) => a + c.qty, 0)} items)
         </h2>
         <p class="total-price">&euro;${cartItems.reduce(
           (a, b) => a + b.price * b.qty,
