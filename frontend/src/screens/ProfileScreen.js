@@ -1,7 +1,6 @@
 import { update } from "../api";
 import { clearUser, getUserInfo, setUserInfo } from "../localStorage";
 import { showLoading, hideLoading, showMessage } from "../utils";
-import { cartItemsTotal } from "./CartScreen";
 
 const ProfileScreen = {
   after_render: () => {

@@ -1,10 +1,11 @@
 import { getProduct } from "../api";
+import { getCartItems } from "../localStorage";
 import { hideLoading, parseRequestUrl, showLoading } from "../utils";
 
 const ProductScreen = {
   after_render: () => {
     const request = parseRequestUrl();
-    document.getElementById("add-button").addEventListener("click", () => {
+    document.querySelector(".add-button").addEventListener("click", () => {
       document.location.hash = `/cart/${request.id}`;
     });
   },
@@ -70,7 +71,7 @@ const ProductScreen = {
                 </div>
               </li>
             <li class="details__info-addBtn">
-              <button type="button" id="add-button" class="btn btn--add">Add to shopping bag</button>
+              <button type="button"  class="btn btn--add add-button">Add to shopping bag</button>
             </li>
             <li class="details__info-paypalBtn">
               <button type="button" class="btn btn--paypal">Pay<span>Pal</span></button>

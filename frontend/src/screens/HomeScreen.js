@@ -1,39 +1,50 @@
 import axios from "axios";
-import { hideLoading, showLoading, showMessage } from "../utils";
+import { getCartItems } from "../localStorage";
+import { hideLoading, showLoading } from "../utils";
 import { addToCart } from "./CartScreen";
 
 const HomeScreen = {
   after_render: () => {
     const cartBtn = document.querySelectorAll(".cart-button");
     cartBtn.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        if (e.target.parentElement.classList.contains("cart-button")) {
-          let image =
-            e.target.parentElement.parentElement.previousElementSibling
-              .children[0].src;
-          let name =
-            e.target.parentElement.parentElement.parentElement
-              .nextElementSibling.children[0].textContent;
-          let price =
-            e.target.parentElement.parentElement.parentElement
-              .nextElementSibling.nextElementSibling.textContent;
-          let finalPrice = price.slice(1).trim();
-          let id =
-            e.target.parentElement.parentElement.parentElement.parentElement.id;
-          let countInStock =
-            e.target.parentElement.parentElement.parentElement.parentElement
-              .dataset.countinstock;
-          const item = {
-            product: id,
-            name: name,
-            image: image,
-            price: Number(finalPrice),
-            countInStock: Number(countInStock),
-            qty: 1,
-          };
-          addToCart({ ...item, qty: 1 }, showMessage());
-        }
-      });
+      let id = btn.id;
+      let inCart = getCartItems().find((item) => item.product === id);
+      if (inCart) {
+        btn.innerText = "In Cart";
+        btn.disabled = true;
+      } else {
+        btn.addEventListener("click", (e) => {
+          e.target.innerText = "In Cart";
+          e.target.disabled = true;
+          if (e.target.parentElement.classList.contains("cart-button")) {
+            let image =
+              e.target.parentElement.parentElement.previousElementSibling
+                .children[0].src;
+            let name =
+              e.target.parentElement.parentElement.parentElement
+                .nextElementSibling.children[0].textContent;
+            let price =
+              e.target.parentElement.parentElement.parentElement
+                .nextElementSibling.nextElementSibling.textContent;
+            let finalPrice = price.slice(1).trim();
+            let id =
+              e.target.parentElement.parentElement.parentElement.parentElement
+                .id;
+            let countInStock =
+              e.target.parentElement.parentElement.parentElement.parentElement
+                .dataset.countinstock;
+            const item = {
+              product: id,
+              name: name,
+              image: image,
+              price: Number(finalPrice),
+              countInStock: Number(countInStock),
+              qty: 1,
+            };
+            addToCart({ ...item, qty: 1 }, true);
+          }
+        });
+      }
     });
   },
   render: async () => {

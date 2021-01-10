@@ -1,1 +1,1 @@
-16. User Profile
+16. Checkout Wizard

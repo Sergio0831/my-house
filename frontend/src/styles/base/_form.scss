@@ -61,7 +61,8 @@
   }
 }
 
-.signin {
+.signin,
+.shipping {
   background: url("../images/login-bg.jpg") no-repeat center;
 }
 
@@ -69,6 +70,7 @@
   background: url("../images/register-bg.jpg") no-repeat center;
 }
 
-.profile {
+.profile,
+.payment {
   background: url("../images/profile-bg.jpg") no-repeat center;
 }
