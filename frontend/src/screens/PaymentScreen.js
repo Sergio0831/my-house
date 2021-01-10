@@ -8,7 +8,7 @@ const PaymentScreen = {
       e.preventDefault();
       const paymentMethod = document.querySelector(
         'input[name="payment-method"]:checked'
-      );
+      ).value;
       setPayment({ paymentMethod });
       document.location.hash = "/placeorder";
     });
@@ -28,8 +28,8 @@ const PaymentScreen = {
           </li>
           <li>
             <div class="paypal">
-              <input class="paypal__radio" type="radio" name="payment-method" id="paypal" value="PayPal" checked/>
-              <label for="paypal">Paypal</label>
+              <input class="paypal__radio" type="radio" name="payment-method" id="paypal" value="PayPal" checked />
+              <label for="paypal">PayPal</label>
             </div>
             <div class="stripe">
               <input class="stripe__radio" type="radio" name="payment-method" id="stripe" value="Stripe" />
