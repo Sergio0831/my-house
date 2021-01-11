@@ -1,6 +1,6 @@
 import { getProduct } from "../api";
 import { getCartItems, setCartItems } from "../localStorage";
-import { parseRequestUrl, redirectUser, rerender, showMessage } from "../utils";
+import { parseRequestUrl, rerender, showMessage } from "../utils";
 
 export const addToCart = (item, forceUpdate = false) => {
   let cartItems = getCartItems();

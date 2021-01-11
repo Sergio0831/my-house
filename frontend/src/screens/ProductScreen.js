@@ -1,5 +1,4 @@
 import { getProduct } from "../api";
-import { getCartItems } from "../localStorage";
 import { hideLoading, parseRequestUrl, showLoading } from "../utils";
 
 const ProductScreen = {
