@@ -78,3 +78,10 @@ footer {
   grid-area: footer;
   background: #e5e5e5;
 }
+
+.error {
+  color: $primaryColor;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
