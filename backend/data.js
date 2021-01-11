@@ -1,7 +1,7 @@
 export default {
   products: [
     {
-      _id: "1",
+      _id: "111111111111111111111111",
       name: "King Panel Bed",
       category: "Bedroom",
       image: "images/products/product-1.jpeg",
