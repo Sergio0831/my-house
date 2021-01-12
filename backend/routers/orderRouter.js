@@ -4,6 +4,18 @@ import Order from "../models/orderModel";
 import { isAuth } from "../utils";
 
 const orderRouter = express.Router();
+
+orderRouter.get(
+  "/mine",
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const orders = await Order.find({
+      user: req.user._id,
+    });
+    res.send(orders);
+  })
+);
+
 orderRouter.get(
   "/:id",
   isAuth,
@@ -33,6 +45,27 @@ orderRouter.post(
     });
     const createOrder = await order.save();
     res.status(201).send({ message: "Nem order created", order: createOrder });
+  })
+);
+
+orderRouter.put(
+  "/:id/pay",
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const order = await Order.findById(req.params);
+    if (order) {
+      order.isPaid = true;
+      order.paidAt = Date.now();
+      order.payment.paymentResult = {
+        payerId: req.body.payerId,
+        paymentId: req.body.paymentId,
+        orderId: req.body.orderId,
+      };
+      const updatedOrder = await order.save();
+      res.send({ message: "Order Paid", order: updatedOrder });
+    } else {
+      res.status(404).send({ message: "Order Not Found" });
+    }
   })
 );
 

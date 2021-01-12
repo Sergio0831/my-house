@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getCartItems } from "../localStorage";
-import { hideLoading, showLoading } from "../utils";
+import { hideLoading, showLoading, showMessage } from "../utils";
 import { addToCart } from "./CartScreen";
 
 const HomeScreen = {
@@ -41,7 +41,8 @@ const HomeScreen = {
               countInStock: Number(countInStock),
               qty: 1,
             };
-            addToCart({ ...item, qty: 1 }, true);
+            addToCart({ ...item, qty: 1 }, false);
+            showMessage(`${name} added to shopping bag`);
           }
         });
       }

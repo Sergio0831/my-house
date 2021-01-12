@@ -147,7 +147,7 @@ const CartScreen = {
               <button type="button" id="checkout-button" class="btn btn--add">Proceed to checkout</button>
       </div>
       <div class="cart__paypalBtn">
-              <button type="button" id="checkoutPaypal-btn" class="btn btn--paypal">Pay<span>Pal</span></button>
+            <button type="button" id="checkoutPaypal-btn" class="btn btn--paypal">Pay<span>Pal</span></button> 
       </div>
     </div>
     `;

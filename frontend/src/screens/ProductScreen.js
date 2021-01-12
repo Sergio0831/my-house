@@ -4,6 +4,8 @@ import { hideLoading, parseRequestUrl, showLoading } from "../utils";
 const ProductScreen = {
   after_render: () => {
     const request = parseRequestUrl();
+    const qtySelects = document.getElementsByClassName("qty-select");
+
     document.querySelector(".add-button").addEventListener("click", () => {
       document.location.hash = `/cart/${request.id}`;
     });

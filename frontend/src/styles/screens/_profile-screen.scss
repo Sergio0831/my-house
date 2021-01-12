@@ -1,0 +1,56 @@
+.profile-screen {
+  max-width: 1150px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5rem 1rem 0;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr auto;
+  row-gap: 3rem;
+  column-gap: 3rem;
+
+  .profile__orders {
+    color: $darkColor;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    &-title {
+      font-size: 2.6rem;
+      text-align: center;
+    }
+  }
+
+  .orders__table {
+    padding-top: 2rem;
+
+    &-header {
+      text-align: left;
+      font-size: 1.4rem;
+    }
+
+    &-row {
+      background: $darkGray;
+      font-size: 1.2rem;
+      &:nth-child(odd) {
+        background: $lightGray;
+      }
+    }
+
+    td {
+      padding: 0.5rem;
+    }
+
+    a {
+      color: $primaryColor;
+    }
+  }
+
+  .form-container {
+    height: auto;
+  }
+
+  .profile__info {
+    padding-top: 5.5rem;
+  }
+}
