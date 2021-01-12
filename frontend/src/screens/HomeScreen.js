@@ -1,7 +1,8 @@
 import axios from "axios";
+import { getProduct } from "../api";
 import { getCartItems } from "../localStorage";
-import { hideLoading, showLoading, showMessage } from "../utils";
-import { addToCart } from "./CartScreen";
+import { hideLoading, rerender, showLoading, showMessage } from "../utils";
+import { addToCart, cartItemsTotal } from "./CartScreen";
 
 const HomeScreen = {
   after_render: () => {
@@ -13,37 +14,20 @@ const HomeScreen = {
         btn.innerText = "In Cart";
         btn.disabled = true;
       } else {
-        btn.addEventListener("click", (e) => {
-          e.target.innerText = "In Cart";
-          e.target.disabled = true;
-          if (e.target.parentElement.classList.contains("cart-button")) {
-            let image =
-              e.target.parentElement.parentElement.previousElementSibling
-                .children[0].src;
-            let name =
-              e.target.parentElement.parentElement.parentElement
-                .nextElementSibling.children[0].textContent;
-            let price =
-              e.target.parentElement.parentElement.parentElement
-                .nextElementSibling.nextElementSibling.textContent;
-            let finalPrice = price.slice(1).trim();
-            let id =
-              e.target.parentElement.parentElement.parentElement.parentElement
-                .id;
-            let countInStock =
-              e.target.parentElement.parentElement.parentElement.parentElement
-                .dataset.countinstock;
-            const item = {
-              product: id,
-              name: name,
-              image: image,
-              price: Number(finalPrice),
-              countInStock: Number(countInStock),
-              qty: 1,
-            };
-            addToCart({ ...item, qty: 1 }, false);
-            showMessage(`${name} added to shopping bag`);
-          }
+        btn.addEventListener("click", async () => {
+          const product = await getProduct(id);
+          let item = {
+            product: product._id,
+            name: product.name,
+            image: product.image,
+            price: Number(product.price),
+            countInStock: Number(product.countInStock),
+          };
+          addToCart({ ...item, qty: 1 });
+          cartItemsTotal();
+          showMessage(`${product.name} added to shopping bag`, () => {
+            rerender(HomeScreen);
+          });
         });
       }
     });

@@ -2,9 +2,9 @@ import { getOrder, getPaypalClientId, payOrder } from "../api";
 import {
   hideLoading,
   parseRequestUrl,
-  rerender,
   showLoading,
   showMessage,
+  rerender,
 } from "../utils";
 
 const addPaypalSdk = async (totalPrice) => {
@@ -21,7 +21,6 @@ const addPaypalSdk = async (totalPrice) => {
     handlePayment(clientId, totalPrice);
   }
 };
-
 const handlePayment = (clientId, totalPrice) => {
   window.paypal.Button.render(
     {
@@ -32,12 +31,13 @@ const handlePayment = (clientId, totalPrice) => {
       },
       locale: "en_US",
       style: {
+        size: "responsive",
         color: "gold",
         shape: "rect",
-        size: "responsive",
         height: 40,
       },
-      commit: "true",
+
+      commit: true,
       payment(data, actions) {
         return actions.payment.create({
           transactions: [
@@ -54,11 +54,11 @@ const handlePayment = (clientId, totalPrice) => {
         return actions.payment.execute().then(async () => {
           showLoading();
           await payOrder(parseRequestUrl().id, {
-            orderId: data.orderId,
-            payerId: data.payerId,
-            paymentId: data.paymentId,
-          }),
-            hideLoading();
+            orderID: data.orderID,
+            payerID: data.payerID,
+            paymentID: data.paymentID,
+          });
+          hideLoading();
           showMessage("Payment was successfull.", () => {
             rerender(OrderScreen);
           });

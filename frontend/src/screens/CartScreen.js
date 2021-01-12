@@ -29,7 +29,7 @@ export const removeFromCart = (id) => {
   }
 };
 
-const cartItemsTotal = () => {
+export const cartItemsTotal = () => {
   const navBar = document.getElementById("navbar-container");
   const cartIcon = navBar.querySelector(".cart-icon__number");
   let cartItems = getCartItems();
@@ -57,7 +57,6 @@ const CartScreen = {
         const title =
           e.target.parentElement.previousElementSibling.children[0].innerHTML;
         const message = `${title}  was removed from your shopping bag`;
-        console.log(title);
         showMessage(message, removeFromCart(removeButton.id));
       });
     });

@@ -30,16 +30,16 @@ const ShippingScreen = {
             <h1 class="form__title">Shipping</h1>
           </li>
           <li>
-            <input class="form__input" type="text" id="address" name="address" value="${address}" placeholder="Address"/>
+            <input class="form__input" type="text" id="address" name="address" value="${address}" placeholder="Address" required/>
           </li>
           <li>
-            <input class="form__input" type="text" id="city" name="city" value="${city}" placeholder="City"/>
+            <input class="form__input" type="text" id="city" name="city" value="${city}" placeholder="City" required/>
           </li>
           <li>
-            <input class="form__input" type="text" id="postalCode" name="postalCode" value="${postalCode}" placeholder="Postal Code"/>
+            <input class="form__input" type="text" id="postalCode" name="postalCode" value="${postalCode}" placeholder="Postal Code" required/>
           </li>
           <li>
-            <input class="form__input" type="text" id="country" name="country" value="${country}" placeholder="Country"/>
+            <input class="form__input" type="text" id="country" name="country" value="${country}" placeholder="Country" required/>
           </li>
           <li>
             <button type="submit" class="btn form__btn">Continue</button>
