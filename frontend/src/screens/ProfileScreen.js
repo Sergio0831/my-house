@@ -38,30 +38,32 @@ const ProfileScreen = {
       <div class="profile__orders">
         <h2 class="profile__orders-title">Order History</h2>
           <table class="orders__table">
-            <thead class="orders__table-header">
-              <tr class="orders__table-row">
-                <th>ORDER ID</th>
-                <th>DATE</th>
-                <th>TOTAL</th>
-                <th>PAID</th>
-                <th>DELIVERED</th>
-                <th>ACTIONS</th>
+            <thead>
+              <tr>
+                <th class="column1">Order Id</th>
+                <th class="column2">Date</th>
+                <th class="column3">Total</th>
+                <th class="column4">Paid</th>
+                <th class="column5">Delivered</th>
+                <th class="column6">Actions</th>
               </tr>
             </thead>
-            <tbody class="orders__table-body">
+            <tbody>
               ${
                 orders.length === 0
-                  ? `<tr class="orders__table-row"><td colspan="6">No Order Found</td></tr>`
+                  ? `<tr><td colspan="6">No Order Found</td></tr>`
                   : orders
                       .map(
                         (order) => `
-                  <tr class="orders__table-row">
-                    <td>${order._id}</td>
-                    <td>${order.createdAt}</td>
-                    <td>${order.totalPrice}</td>
-                    <td>${order.paidAt || "No"}</td>
-                    <td>${order.deliveredAt || "No"}</td>
-                    <td><a href="/#/order/${order.id}">DETAILS</a></td>
+                  <tr>
+                    <td class="column1">${order._id}</td>
+                    <td class="column2">${order.createdAt}</td>
+                    <td class="column3">${order.totalPrice}</td>
+                    <td class="column4">${order.paidAt || "No"}</td>
+                    <td class="column5">${order.deliveredAt || "No"}</td>
+                    <td class="column6"><a href="/#/order/${
+                      order.id
+                    }">DETAILS</a></td>
                   </tr>
                   `
                       )

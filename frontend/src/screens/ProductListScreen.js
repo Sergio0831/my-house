@@ -1,0 +1,53 @@
+import { getProducts } from "../api";
+import DashboardMenu from "../components/DasboardMenu";
+
+const ProductListScreen = {
+  after_render: () => {},
+  render: async () => {
+    const products = await getProducts();
+    return `
+    <div class="dashboard">
+      ${DashboardMenu.render({ selected: "products" })}
+      <div class="dashboard__content">
+        <h1 class="dashboard__title">Products</h1>
+        <button class="btn btn--blue btn--create">Create Product</button>
+        <div>
+          <table class="products-table">
+            <thead>
+              <tr>
+                <th class="column1">Id</th>
+                <th class="column2">Name</th>
+                <th class="column3">Price</th>
+                <th class="column4">Category</th>
+                <th class="column5">Brand</th>
+                <th class="column6">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${products
+                .map(
+                  (product) => `
+              <tr>
+                <td class="column1">${product._id}</td>
+                <td class="column2">${product.name}</td>
+                <td class="column3">${product.price}</td>
+                <td class="column4">${product.category}</td>
+                <td class="column5">${product.brand}</td>
+                <td class="column6">
+                  <button id="${product.id}" class="btn btn--edit btn--yellow">Edit</button>
+                  <button id="${product.id}" class="btn btn--delete">Delete</button>
+                </td>
+              </tr>
+              `
+                )
+                .join("\n")}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    `;
+  },
+};
+
+export default ProductListScreen;

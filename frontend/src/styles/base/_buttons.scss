@@ -21,6 +21,16 @@ button {
   }
 }
 
+.btn--yellow {
+  background: $yellowColor;
+  border: 1px solid $yellowColor;
+}
+
+.btn--blue {
+  background: $blueColor;
+  border: 1px solid $blueColor;
+}
+
 .btn--add {
   width: 100%;
   padding: 1.2rem 0;
@@ -35,8 +45,8 @@ button {
   font-style: italic;
   font-weight: 900;
   color: #263b80;
-  background: $yellow;
-  border: 1px solid $yellow;
+  background: $yellowColor;
+  border: 1px solid $yellowColor;
   span {
     color: #139ad6;
   }
@@ -44,7 +54,19 @@ button {
     background: transparent;
   }
 }
-
-.fw {
-  width: 100%;
+.btn--create {
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+.btn--edit {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.btn--delete {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
 }

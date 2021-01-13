@@ -8,9 +8,11 @@
   padding: 0 1rem;
   column-gap: 2rem;
   row-gap: 2rem;
+  padding-bottom: 2rem;
   &__title {
     font-size: 3rem;
     margin-bottom: 1rem;
+    letter-spacing: $mainSpacing;
   }
   &__menu {
     flex: 1 1 20rem;
@@ -29,11 +31,11 @@
       padding: 1rem;
       padding-left: 2rem;
       column-gap: 1rem;
-      transition: $mainTransition;
       position: relative;
       font-size: 1.8rem;
       color: $darkColor;
       font-weight: 700;
+      letter-spacing: $mainSpacing;
       &:hover {
         background: $gray;
       }
