@@ -2,7 +2,7 @@ import { getCartItems, getUserInfo } from "../localStorage";
 
 const Navbar = {
   render: () => {
-    const { name } = getUserInfo();
+    const { name, isAdmin } = getUserInfo();
     return `
     <div class="container">
           <div>
@@ -20,6 +20,13 @@ const Navbar = {
                 </a>
               `
               }
+              </li>
+              <li class="icon">
+                ${
+                  isAdmin
+                    ? `<a href="/#/dashboard" class="icon-link dashboard-link">Dashboard</a>`
+                    : ""
+                }
               </li>
               <li class="icon">
                 <a href="/#/favorite" class="icon-link favorite-icon">
