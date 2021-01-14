@@ -9,6 +9,7 @@
   grid-template-columns: 1fr auto;
   row-gap: 3rem;
   column-gap: 3rem;
+  padding-bottom: 2rem;
 
   .profile__orders {
     color: $darkColor;
@@ -18,31 +19,8 @@
     &-title {
       font-size: 2.6rem;
       text-align: center;
-    }
-  }
-
-  .orders__table {
-    padding-top: 2rem;
-
-    &-header {
-      text-align: left;
-      font-size: 1.4rem;
-    }
-
-    &-row {
-      background: $darkGray;
-      font-size: 1.2rem;
-      &:nth-child(odd) {
-        background: $lightGray;
-      }
-    }
-
-    td {
-      padding: 0.5rem;
-    }
-
-    a {
-      color: $primaryColor;
+      margin-bottom: 1rem;
+      letter-spacing: $mainSpacing;
     }
   }
 
@@ -51,6 +29,6 @@
   }
 
   .profile__info {
-    padding-top: 5.5rem;
+    padding-top: 4rem;
   }
 }

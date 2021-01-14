@@ -1,7 +1,6 @@
-import axios from "axios";
-import { getProduct } from "../api";
+import { getProduct, getProducts } from "../api";
 import { getCartItems } from "../localStorage";
-import { hideLoading, rerender, showLoading, showMessage } from "../utils";
+import { rerender, showMessage } from "../utils";
 import { addToCart, cartItemsTotal } from "./CartScreen";
 
 const HomeScreen = {
@@ -33,16 +32,10 @@ const HomeScreen = {
     });
   },
   render: async () => {
-    showLoading();
-    const response = await axios({
-      url: "http://localhost:5000/api/products",
-    });
-    hideLoading();
-    if (!response || response.statusText !== "OK") {
-      return "<div>Error in getting data</div>";
+    const products = await getProducts();
+    if (products.error) {
+      return `<div class="error">${products.error}</div>`;
     }
-    const products = response.data;
-
     return `
     <header class="hero">
       <div class="banner">
