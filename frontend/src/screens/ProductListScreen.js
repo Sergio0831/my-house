@@ -1,8 +1,15 @@
-import { getProducts } from "../api";
+import { createProduct, getProducts } from "../api";
 import DashboardMenu from "../components/DasboardMenu";
 
 const ProductListScreen = {
-  after_render: () => {},
+  after_render: () => {
+    document
+      .getElementById("create-button")
+      .addEventListener("click", async () => {
+        const data = await createProduct();
+        document.location.hash = `/product/${data.product._id}/edit`;
+      });
+  },
   render: async () => {
     const products = await getProducts();
     return `
@@ -10,7 +17,7 @@ const ProductListScreen = {
       ${DashboardMenu.render({ selected: "products" })}
       <div class="dashboard__content">
         <h1 class="dashboard__title">Products</h1>
-        <button class="btn btn--blue btn--create">Create Product</button>
+        <button id="create-button" class="btn btn--blue btn--create">Create Product</button>
         <div>
           <table class="products-table">
             <thead>
