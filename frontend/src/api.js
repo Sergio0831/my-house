@@ -2,6 +2,7 @@ import axios from "axios";
 import { apiUrl } from "./config";
 import { getUserInfo } from "./localStorage";
 
+/* Get Products Array*/
 export const getProducts = async () => {
   try {
     const response = await axios({
@@ -18,6 +19,7 @@ export const getProducts = async () => {
   }
 };
 
+/* Get Single Product By Id */
 export const getProduct = async (id) => {
   try {
     const response = await axios({
@@ -54,12 +56,37 @@ export const createProduct = async () => {
   }
 };
 
+/* Update Product */
+export const updateProduct = async (product) => {
+  try {
+    const { token } = getUserInfo();
+    const response = await axios({
+      url: `${apiUrl}/api/products/${product._id}`,
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      data: product,
+    });
+    if (response.statusText !== "OK") {
+      throw new Error(response.data.message);
+    }
+    return response.data;
+  } catch (err) {
+    return { error: err.response.data.message || err.message };
+  }
+};
+
 /* Login Screen */
 export const signin = async ({ email, password }) => {
   try {
     const response = await axios({
       url: `${apiUrl}/api/users/signin`,
       method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
       data: {
         email,
         password,
@@ -81,6 +108,9 @@ export const register = async ({ name, email, password }) => {
     const response = await axios({
       url: `${apiUrl}/api/users/register`,
       method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
       data: {
         name,
         email,
@@ -131,6 +161,7 @@ export const createOrder = async (order) => {
       url: `${apiUrl}/api/orders/`,
       method: "POST",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
       data: order,
@@ -166,6 +197,7 @@ export const getOrder = async (id) => {
   }
 };
 
+/* Get Orders */
 export const getMyOrders = async () => {
   try {
     const { token } = getUserInfo();
@@ -186,9 +218,13 @@ export const getMyOrders = async () => {
   }
 };
 
+/* Get Paypal Client ID */
 export const getPaypalClientId = async () => {
   const response = await axios({
     url: `${apiUrl}/api/paypal/clientId`,
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
   if (response.statusText !== "OK") {
     throw new Error(response.data.message);

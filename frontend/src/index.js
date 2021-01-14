@@ -14,6 +14,7 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import ProductListScreen from "./screens/ProductListScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
 
 if (module.hot) {
   module.hot.accept();
@@ -21,6 +22,7 @@ if (module.hot) {
 
 const routes = {
   "/": HomeScreen,
+  "/product/:id/edit": ProductEditScreen,
   "/product/:id": ProductScreen,
   "/cart/:id": CartScreen,
   "/cart": CartScreen,

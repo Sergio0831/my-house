@@ -3,12 +3,18 @@ import DashboardMenu from "../components/DasboardMenu";
 
 const ProductListScreen = {
   after_render: () => {
-    document
-      .getElementById("create-button")
-      .addEventListener("click", async () => {
-        const data = await createProduct();
-        document.location.hash = `/product/${data.product._id}/edit`;
+    const createButton = document.getElementById("create-button");
+    const editButtons = document.querySelectorAll(".btn--edit");
+    const deleteButtons = document.querySelectorAll(".btn--delete");
+    createButton.addEventListener("click", async () => {
+      const data = await createProduct();
+      document.location.hash = `/product/${data.product._id}/edit`;
+    });
+    Array.from(editButtons).forEach((editButton) => {
+      editButton.addEventListener("click", () => {
+        document.location.hash = `/product/${editButton.id}/edit`;
       });
+    });
   },
   render: async () => {
     const products = await getProducts();
@@ -41,8 +47,8 @@ const ProductListScreen = {
                 <td class="column4">${product.category}</td>
                 <td class="column5">${product.brand}</td>
                 <td class="column6">
-                  <button id="${product.id}" class="btn btn--edit btn--yellow">Edit</button>
-                  <button id="${product.id}" class="btn btn--delete">Delete</button>
+                  <button id="${product._id}" class="btn btn--edit btn--yellow">Edit</button>
+                  <button id="${product._id}" class="btn btn--delete">Delete</button>
                 </td>
               </tr>
               `
