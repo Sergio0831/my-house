@@ -15,6 +15,7 @@ import OrderScreen from "./screens/OrderScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
+import OrderListScreen from "./screens/OrderListScreen";
 
 if (module.hot) {
   module.hot.accept();
@@ -35,6 +36,7 @@ const routes = {
   "/order/:id": OrderScreen,
   "/dashboard": DashboardScreen,
   "/productlist": ProductListScreen,
+  "/orderlist": OrderListScreen,
 };
 
 const router = async () => {
