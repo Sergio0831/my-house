@@ -48,4 +48,46 @@
   &__content {
     flex: 4 1 80rem;
   }
+  .summary {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &__item {
+      border: 0.1rem solid $gray;
+      border-radius: $mainRadius;
+      margin: 2rem;
+      flex: 1 1 20rem;
+    }
+    &__title {
+      background: $lightGray;
+      font-size: 2rem;
+      padding: 1rem;
+      color: $lightColor;
+      font-weight: 600;
+    }
+    .color1 {
+      background: $blueColor;
+    }
+    .color2 {
+      background: $orangeColor;
+    }
+    .color3 {
+      background: $greenColor;
+    }
+    &__body {
+      font-size: 4rem;
+      font-family: $numberFont;
+      text-align: center;
+    }
+  }
+  .charts {
+    display: flex;
+    justify-content: space-between;
+    &__item {
+      flex: 1;
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  }
 }
