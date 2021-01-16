@@ -1,3 +1,4 @@
+import { config } from "dotenv/types";
 import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import User from "../models/userModel";
@@ -12,7 +13,7 @@ userRouter.get(
       const user = new User({
         name: "Sergejs",
         email: "admin@example.com",
-        password: "myhouse",
+        password: config.ADMIN_PASSWORD,
         isAdmin: true,
       });
       const createdUser = await user.save();
