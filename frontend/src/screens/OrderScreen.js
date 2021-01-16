@@ -1,4 +1,5 @@
-import { getOrder, getPaypalClientId, payOrder } from "../api";
+import { deliverOrder, getOrder, getPaypalClientId, payOrder } from "../api";
+import { getUserInfo } from "../localStorage";
 import {
   hideLoading,
   parseRequestUrl,
@@ -72,8 +73,20 @@ const handlePayment = (clientId, totalPrice) => {
 };
 
 const OrderScreen = {
-  after_render: () => {},
+  after_render: () => {
+    const request = parseRequestUrl();
+    document
+      .getElementById("deliver-order-button")
+      .addEventListener("click", async () => {
+        showLoading();
+        await deliverOrder(request.id);
+        hideLoading();
+        showMessage("Order Delivered");
+        rerender(OrderScreen);
+      });
+  },
   render: async () => {
+    const { isAdmin } = getUserInfo();
     const request = parseRequestUrl();
     const {
       _id,
@@ -166,7 +179,14 @@ const OrderScreen = {
                     <p>&euro;${totalPrice}</p>
                   </li>
                   <li>
-                   <div id="paypal-button"></div>
+                   <div id="#paypal-button"></div>
+                  </li>
+                  <li>
+                  ${
+                    isPaid && !isDelivered && isAdmin
+                      ? `<button id="deliver-order-button" class="btn btn--add btn--yellow">Deliver Order</button>`
+                      : ""
+                  }
                   </li>
               </ul>
       </div>

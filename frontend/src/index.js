@@ -4,7 +4,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import { hideLoading, parseRequestUrl, showLoading } from "./utils";
 import CartScreen from "./screens/CartScreen";
-import SignInScreen from "./screens/SigninScreen";
+import SigninScreen from "./screens/SigninScreen";
 import Navbar from "./components/Navbar";
 import RegisterScreen from "./screens/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen";
@@ -25,15 +25,15 @@ const routes = {
   "/": HomeScreen,
   "/product/:id/edit": ProductEditScreen,
   "/product/:id": ProductScreen,
+  "/order/:id": OrderScreen,
   "/cart/:id": CartScreen,
   "/cart": CartScreen,
-  "/signin": SignInScreen,
+  "/signin": SigninScreen,
   "/register": RegisterScreen,
   "/profile": ProfileScreen,
   "/shipping": ShippingScreen,
   "/payment": PaymentScreen,
   "/placeorder": PlaceOrderScreen,
-  "/order/:id": OrderScreen,
   "/dashboard": DashboardScreen,
   "/productlist": ProductListScreen,
   "/orderlist": OrderListScreen,
