@@ -7,15 +7,6 @@ import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
 import Navbar from "./components/Navbar";
 import RegisterScreen from "./screens/RegisterScreen";
-import ProfileScreen from "./screens/ProfileScreen";
-import ShippingScreen from "./screens/ShippingScreen";
-import PaymentScreen from "./screens/PaymentScreen";
-import PlaceOrderScreen from "./screens/PlaceOrderScreen";
-import OrderScreen from "./screens/OrderScreen";
-import DashboardScreen from "./screens/DashboardScreen";
-import ProductListScreen from "./screens/ProductListScreen";
-import ProductEditScreen from "./screens/ProductEditScreen";
-import OrderListScreen from "./screens/OrderListScreen";
 
 if (module.hot) {
   module.hot.accept();
@@ -23,20 +14,11 @@ if (module.hot) {
 
 const routes = {
   "/": HomeScreen,
-  "/product/:id/edit": ProductEditScreen,
   "/product/:id": ProductScreen,
-  "/order/:id": OrderScreen,
   "/cart/:id": CartScreen,
   "/cart": CartScreen,
   "/signin": SigninScreen,
   "/register": RegisterScreen,
-  "/profile": ProfileScreen,
-  "/shipping": ShippingScreen,
-  "/payment": PaymentScreen,
-  "/placeorder": PlaceOrderScreen,
-  "/dashboard": DashboardScreen,
-  "/productlist": ProductListScreen,
-  "/orderlist": OrderListScreen,
 };
 
 const router = async () => {

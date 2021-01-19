@@ -1,5 +1,3 @@
-import { register } from "../api";
-import { getUserInfo, setUserInfo } from "../localStorage";
 import { showLoading, hideLoading, showMessage, redirectUser } from "../utils";
 
 const RegisterScreen = {

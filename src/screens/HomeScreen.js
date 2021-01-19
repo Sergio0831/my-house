@@ -1,4 +1,7 @@
 import { getProduct, getProducts } from "../api";
+import Header from "../components/Header";
+import Info from "../components/Info";
+import Categories from "../components/Categories";
 import { getCartItems } from "../localStorage";
 import {
   hideLoading,
@@ -49,12 +52,7 @@ const HomeScreen = {
       const product = await getProducts();
       const products = product.slice(0, 8);
       return `
-    <header class="hero">
-      <div class="banner">
-        <h1 class="banner__title">furniture collection</h1>
-        <a href="#" class="banner__btn btn">shop now</a>
-      </div>
-    </header>
+      ${Header.render()}
     <section id="our-products" class="our-products">
       <div class="container">
             <h2 class="section-title">Our Products</h2>
@@ -183,6 +181,8 @@ const HomeScreen = {
           </div>
       </div>
     </section>
+    ${Info.render()},
+    ${Categories.render()}
     `;
     } catch (error) {
       console.log(error);

@@ -1,5 +1,3 @@
-import { signin } from "../api";
-import { getUserInfo, setUserInfo } from "../localStorage";
 import { showLoading, hideLoading, showMessage, redirectUser } from "../utils";
 
 const SignInScreen = {
