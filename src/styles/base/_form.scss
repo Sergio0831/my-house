@@ -69,15 +69,10 @@
   }
 }
 
-.signin,
-.shipping {
-  background: url("../images/login-bg.jpg") no-repeat center;
+.signin {
+  background: url("images/login-bg.jpg") no-repeat center;
 }
 
 .register {
-  background: url("../images/register-bg.jpg") no-repeat center;
-}
-
-.payment {
-  background: url("../images/profile-bg.jpg") no-repeat center;
+  background: url("images/register-bg.jpg") no-repeat center;
 }

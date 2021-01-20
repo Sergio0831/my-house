@@ -1,27 +1,39 @@
 .hero {
-  min-height: calc(80vh - 60px);
+  min-height: calc(60vh - 60px);
   background: url(https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
     center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (min-width: 570px) {
+    min-height: calc(80vh - 60px);
+  }
 
   .banner {
     text-align: center;
     background: rgba(255, 255, 255, 0.55);
     display: inline-block;
-    padding: 2rem 2.3rem;
+    padding: 1rem 1rem;
     border-radius: $mainRadius;
+    @media (min-width: 570px) {
+      padding: 2rem 2.3rem;
+    }
     &__title {
-      font-size: 3.4rem;
+      font-size: 2rem;
       font-family: $textFont;
-      font-size: 3.6rem;
+      font-size: 2.6rem;
       text-transform: uppercase;
       letter-spacing: $mainSpacing;
       margin-bottom: 3rem;
+      @media (min-width: 570px) {
+        font-size: 3.6rem;
+      }
     }
     &__btn {
-      padding: 1.2rem 5rem;
+      padding: 1rem 3rem;
+      @media (min-width: 570px) {
+        padding: 1.2rem 5rem;
+      }
     }
   }
 }

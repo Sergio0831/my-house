@@ -8,17 +8,18 @@ const Navbar = {
             <a href="/#/"><img src="images/header/logo.svg" alt="logo" /></a>
           </div>
           <div class="search-bar">
-          <button type="button" class="search-bar__close--btn">
-            <img src="images/header/search-icon-small.svg" alt="search-icon-small"/>
-          </button>
-          <input  type="search" class="search-bar__input" name="search" placeholder="What are you looking for?" />
+            <button type="button" class="search-bar__close--btn">
+              <img src="images/header/search-icon-small.svg" alt="search-icon-small"/>
+            </button>
+            <input  type="search" class="search-bar__input" name="search" placeholder="What are you looking for?" />
           </div>
           <div class="header__icons">
             <ul class="icons-list">
-            <li class="icon">
-              <a href="#" class="icon-link search-icon">
-                  <img src="images/header/search-icon.svg" alt="search-icon" />
-                </a>
+              <li class="icon mobile-sarch">
+              <input  type="search" class="search-bar__mobile--input" name="search" placeholder="What are you looking for?" />
+                  <a href="#" class="icon-link search-icon">
+                      <img src="images/header/search-icon.svg" alt="search-icon" />
+                    </a>
               </li>
               <li class="icon">
               <a href="/#/signin" class="icon-link user-icon">

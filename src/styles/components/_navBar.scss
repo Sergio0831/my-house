@@ -55,12 +55,31 @@ nav {
       background: $lightGray;
     }
   }
-  .search-icon {
-    display: block;
+  .mobile-sarch {
+    display: flex;
+  }
+
+  .search-bar__mobile--input {
+    transform: translateX(3.5rem);
+    padding: 0 2rem 0 1rem;
+    height: 3.5rem;
+    align-self: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    border-radius: 2rem;
     @media (min-width: 860px) {
       display: none;
     }
   }
+  .search-icon {
+    display: block;
+    position: relative;
+    background: $lightGray;
+    @media (min-width: 860px) {
+      display: none;
+    }
+  }
+
   .cart-icon {
     position: relative;
     &__number {
