@@ -1,0 +1,78 @@
+.footer {
+  grid-area: footer;
+  background: $darkGray;
+  &__content {
+    display: grid;
+    text-align: center;
+    row-gap: 2rem;
+    padding: 2.6rem 1rem;
+    @media (min-width: 570px) {
+      display: flex;
+      padding: 2.6rem 1rem;
+      justify-content: space-between;
+      text-align: center;
+    }
+  }
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    letter-spacing: $mainSpacing;
+    @media (min-width: 570px) {
+      margin-bottom: 2.9rem;
+    }
+  }
+  &__text {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: $mainSpacing;
+    color: $darkColor;
+  }
+  &__list {
+    display: grid;
+    row-gap: 1rem;
+  }
+  &__newsletter {
+    text-align: center;
+    @media (min-width: 570px) {
+      text-align: left;
+    }
+  }
+  &__form {
+    justify-content: center;
+    margin-top: 1.4rem;
+    @media (min-width: 570px) {
+      margin-top: 1.4rem;
+      display: flex;
+      justify-content: flex-start;
+      column-gap: 0.4rem;
+    }
+    &--input {
+      width: 17rem;
+      padding: 0.5rem 1rem;
+      background: $lightColor;
+      border-radius: $mainRadius;
+      border: none;
+      &::placeholder {
+        font-size: 0.8;
+        line-height: 1rem;
+        letter-spacing: $mainSpacing;
+        color: #c4c4c4;
+        font-family: $textFont;
+      }
+    }
+    &--btn {
+      padding: 0.7rem 1rem;
+      font-size: 0.6rem;
+      line-height: 1;
+    }
+  }
+  &__social--links {
+    display: flex;
+    column-gap: 1.4rem;
+    justify-content: center;
+  }
+  a:hover {
+    border-bottom: 0.1rem solid $darkColor;
+  }
+}

@@ -1,6 +1,7 @@
 import { getProduct, getProducts } from "../api";
 import Header from "../components/Header";
 import Info from "../components/Info";
+import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 import { getCartItems } from "../localStorage";
 import {
@@ -14,6 +15,16 @@ import { addToCart, cartItemsTotal } from "./CartScreen";
 
 const HomeScreen = {
   after_render: () => {
+    // Mobile search bar
+    const searchIcon = document.querySelector(".search-icon");
+    searchIcon.addEventListener("click", function (e) {
+      e.preventDefault();
+      document
+        .querySelector(".search-bar__mobile--input")
+        .classList.toggle("active");
+      this.classList.toggle("active");
+    });
+    // Add product to shopping bag
     const cartBtn = document.querySelectorAll(".cart-button");
     cartBtn.forEach((btn) => {
       let id = btn.id;
@@ -48,10 +59,9 @@ const HomeScreen = {
     });
   },
   render: async () => {
-    try {
-      const product = await getProducts();
-      const products = product.slice(0, 8);
-      return `
+    const product = await getProducts();
+    const products = product.slice(0, 8);
+    return `
       ${Header.render()}
     <section id="our-products" class="our-products">
       <div class="container">
@@ -181,12 +191,10 @@ const HomeScreen = {
           </div>
       </div>
     </section>
-    ${Info.render()},
+    ${Info.render()}
     ${Categories.render()}
+    ${Footer.render()}
     `;
-    } catch (error) {
-      console.log(error);
-    }
   },
 };
 export default HomeScreen;

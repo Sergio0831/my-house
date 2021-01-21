@@ -46,7 +46,7 @@ const Categories = {
           </figure>
         </div>
       </div>
-    </section>;
+    </section>
     `;
   },
 };
