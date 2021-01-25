@@ -41,6 +41,7 @@ li {
 }
 
 .section-title {
+  margin-bottom: 3rem;
   text-align: center;
   font-family: $textFont;
   font-size: 3.6rem;
@@ -89,4 +90,11 @@ figure {
   width: 53rem;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-content: center;
+  grid-gap: 3rem;
 }

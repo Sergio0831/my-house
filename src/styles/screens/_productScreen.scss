@@ -2,16 +2,19 @@
   margin-bottom: 8.2rem;
   padding: 0 1rem;
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  grid-template-columns: 2fr 1fr;
   column-gap: 4.4rem;
   row-gap: 2rem;
+  @media (min-width: 1150px) {
+    grid-template-columns: 2fr 1fr;
+  }
   &__image {
-    max-width: 72rem;
     img {
       width: 100%;
       height: 100%;
       object-fit: fill;
+    }
+    @media (min-width: 1150px) {
+      max-width: 72rem;
     }
   }
   &__info {

@@ -17,9 +17,9 @@ const Navbar = {
             <ul class="icons-list">
               <li class="icon mobile-sarch">
               <input  type="search" class="search-bar__mobile--input" name="search" placeholder="What are you looking for?" />
-                  <a href="#" class="icon-link search-icon">
+                  <button href="#" class="icon-link search-icon">
                       <img src="images/header/search-icon.svg" alt="search-icon" />
-                    </a>
+                    </button>
               </li>
               <li class="icon">
               <a href="/#/signin" class="icon-link user-icon">
@@ -38,9 +38,9 @@ const Navbar = {
                 </a>
               </li>
               <li class="icon">
-                <a href="#" class="icon-link menu-icon">
+                <button class="icon-link menu-icon">
                   <img src="images/header/menu-icon.svg" alt="menu" />
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -48,6 +48,15 @@ const Navbar = {
     `;
   },
   after_render: () => {
+    // Mobile search bar
+    const searchIcon = document.querySelector(".search-icon");
+    searchIcon.addEventListener("click", function () {
+      document
+        .querySelector(".search-bar__mobile--input")
+        .classList.toggle("active");
+      this.classList.toggle("active");
+    });
+    // Cart icon
     const cartIcon = document.querySelector(".cart-icon__number");
     let cartItems = getCartItems();
     cartIcon.innerHTML = `${cartItems.reduce((a, c) => a + c.qty, 0)}`;

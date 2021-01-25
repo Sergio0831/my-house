@@ -1,7 +1,6 @@
 const Footer = {
   render: () => {
     return `
-    <footer class='footer'>
       <div class='footer__content container'>
         <div class='footer__newsletter'>
           <h2 class='footer__title'>Signup for Our Newsletter</h2>
@@ -48,7 +47,6 @@ const Footer = {
           </div>
         </div>
       </div>
-    </footer>
     `;
   },
 };

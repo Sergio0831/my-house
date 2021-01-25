@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "contentful": "^8.1.7"
+    "contentful": "^8.1.7",
+    "swiper": "^6.4.8"
   }
 }

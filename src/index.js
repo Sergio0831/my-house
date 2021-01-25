@@ -7,6 +7,7 @@ import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
 import Navbar from "./components/Navbar";
 import RegisterScreen from "./screens/RegisterScreen";
+import Footer from "./components/Footer";
 
 if (module.hot) {
   module.hot.accept();
@@ -34,6 +35,8 @@ const router = async () => {
   Navbar.after_render();
   const main = document.getElementById("main-container");
   main.innerHTML = await screen.render();
+  const footer = document.getElementById("footer");
+  footer.innerHTML = Footer.render();
   if (screen.after_render) await screen.after_render();
   hideLoading();
 };

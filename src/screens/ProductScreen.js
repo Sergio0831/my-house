@@ -12,9 +12,7 @@ const ProductScreen = {
     return (ul.style.display = "block");
   },
   render: async () => {
-    const request = parseRequestUrl();
     showLoading();
-    const id = await getProduct(request.id);
     const products = await getProducts();
     const product = products
       .map((product) => product)

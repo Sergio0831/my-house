@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import { showLoading, hideLoading, showMessage, redirectUser } from "../utils";
 
 const RegisterScreen = {

@@ -55,7 +55,8 @@ const CartScreen = {
     Array.from(removeButtons).forEach((removeButton) => {
       removeButton.addEventListener("click", (e) => {
         const title =
-          e.target.parentElement.previousElementSibling.children[0].innerHTML;
+          e.target.parentElement.previousElementSibling.firstElementChild
+            .innerHTML;
         const message = `${title}  was removed from your shopping bag`;
         showMessage(message, removeFromCart(removeButton.id));
       });
@@ -96,7 +97,7 @@ const CartScreen = {
                 <img src="${item.image}" alt="${item.name}"/>
               </div>
               <div class="cart__name">
-                <a class="cart__name-title" href="/#/product/${item.product}">${
+                <a class="cart__name-title" href="/#/product/${item.id}">${
                     item.name
                   }</a>
                 <p class="cart__name-price">&euro;${item.price}</p>
