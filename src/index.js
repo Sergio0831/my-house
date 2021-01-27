@@ -8,6 +8,7 @@ import SigninScreen from "./screens/SigninScreen";
 import Navbar from "./components/Navbar";
 import RegisterScreen from "./screens/RegisterScreen";
 import Footer from "./components/Footer";
+import Menu from "./components/Menu";
 
 if (module.hot) {
   module.hot.accept();
@@ -33,6 +34,9 @@ const router = async () => {
   const navbar = document.getElementById("navbar-container");
   navbar.innerHTML = Navbar.render();
   Navbar.after_render();
+  const menu = document.getElementById("menu");
+  menu.innerHTML = Menu.render();
+  Menu.after_render();
   const main = document.getElementById("main-container");
   main.innerHTML = await screen.render();
   const footer = document.getElementById("footer");

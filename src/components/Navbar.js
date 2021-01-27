@@ -1,4 +1,5 @@
 import { getCartItems } from "../localStorage";
+import { showMenu } from "../utils";
 
 const Navbar = {
   render: () => {
@@ -63,6 +64,8 @@ const Navbar = {
     if (getCartItems().length === 0) {
       cartIcon.style.display = "none";
     }
+    // Show Menu
+    document.querySelector(".menu-icon").addEventListener("click", showMenu);
   },
 };
 

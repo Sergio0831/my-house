@@ -12,6 +12,8 @@ const ProductScreen = {
     return (ul.style.display = "block");
   },
   render: async () => {
+    const request = parseRequestUrl();
+    console.log(request.id);
     showLoading();
     const products = await getProducts();
     const product = products
@@ -69,7 +71,9 @@ const ProductScreen = {
                 </div>
               </li>
             <li class="details__info-addBtn">
-              <button type="button"  class="btn btn--add add-button">Add to shopping bag</button>
+              <button type="button" id=${
+                product.id
+              }  class="btn btn--add add-button">Add to shopping bag</button>
             </li>
             <li class="details__info-paypalBtn">
               <button type="button" class="btn btn--paypal">Pay<span>Pal</span></button>

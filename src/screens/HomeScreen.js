@@ -12,20 +12,20 @@ const HomeScreen = {
     const cartBtn = document.querySelectorAll(".cart-button");
     cartBtn.forEach((btn) => {
       let id = btn.id;
-      let inCart = getCartItems().find((item) => item.product === id);
+      let inCart = getCartItems().find((item) => item.id === id);
       if (inCart) {
         btn.innerText = "In Cart";
         btn.disabled = true;
       } else {
         btn.addEventListener("click", async (e) => {
-          const id = e.target.parentElement.id;
+          const id = e.target.id;
           showLoading();
           const products = await getProducts();
           const product = products
             .map((product) => product)
             .find((product) => product.id === id);
           let item = {
-            product: product.id,
+            id: product.id,
             name: product.title,
             image: product.image,
             price: Number(product.price),
@@ -88,7 +88,7 @@ const HomeScreen = {
                       </a>
                     </div>
                     <button class="cart-button" id="${product.id}">
-                      <img src="images/cart-icon.svg" class="cart-button__icon" alt="cart"/>
+                      <img src="images/cart-icon.svg" class="cart-button__icon" id="${product.id}" alt="cart"/>
                     </button>
                     <button class="favorite-button">
                       <img src="images/heart-icon.svg" alt="heart"/>
@@ -136,7 +136,7 @@ const HomeScreen = {
                       </a>
                     </div>
                     <button class="cart-button" id="${product.id}">
-                      <img src="images/cart-icon.svg" class="cart-button__icon" alt="cart"/>
+                      <img src="images/cart-icon.svg" class="cart-button__icon" id="${product.id}" alt="cart"/>
                     </button>
                     <button class="favorite-button">
                       <img src="images/heart-icon.svg" alt="heart"/>

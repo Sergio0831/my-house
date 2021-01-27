@@ -17,6 +17,18 @@ export const rerender = async (component) => {
   await component.after_render();
 };
 
+export const showMenu = () => {
+  document.getElementById("menu").classList.add("active");
+  document.querySelector(".menu-overlay").classList.add("active");
+  document.body.style.overflowY = "hidden";
+};
+
+export const hideMenu = () => {
+  document.getElementById("menu").classList.remove("active");
+  document.querySelector(".menu-overlay").classList.remove("active");
+  document.body.style.overflowY = "visible";
+};
+
 export const showLoading = () => {
   const loadingOverlay = document.querySelector(".loading-overlay");
   loadingOverlay.classList.add("active");
