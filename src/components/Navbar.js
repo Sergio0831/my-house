@@ -5,6 +5,14 @@ const Navbar = {
   render: () => {
     return `
     <div class="container">
+        <div class="mobile-searchBar">
+          <form class="mobile-searchBar__form">
+            <input type="search" class="mobile-searchBar__input" placeholder="What are you looking for?"/>
+          </form>
+          <a href="#">
+            <img class="mobile-searchBar--close" src="./images/close-btn.svg" alt="close"/>
+          </a>
+        </div>
           <div>
             <a href="/#/"><img src="images/header/logo.svg" alt="logo" /></a>
           </div>
@@ -17,13 +25,12 @@ const Navbar = {
           <div class="header__icons">
             <ul class="icons-list">
               <li class="icon mobile-sarch">
-              <input  type="search" class="search-bar__mobile--input" name="search" placeholder="What are you looking for?" />
                   <button href="#" class="icon-link search-icon">
                       <img src="images/header/search-icon.svg" alt="search-icon" />
                     </button>
               </li>
               <li class="icon">
-              <a href="/#/signin" class="icon-link user-icon">
+                <a href="/#/signin" class="icon-link user-icon">
                   <img src="images/header/user-icon.svg" alt="user" />
                 </a>
               </li>
@@ -50,12 +57,15 @@ const Navbar = {
   },
   after_render: () => {
     // Mobile search bar
+    // Show
     const searchIcon = document.querySelector(".search-icon");
     searchIcon.addEventListener("click", function () {
-      document
-        .querySelector(".search-bar__mobile--input")
-        .classList.toggle("active");
-      this.classList.toggle("active");
+      document.querySelector(".mobile-searchBar").classList.add("active");
+    });
+    // HIde
+    const closeSearchBar = document.querySelector(".mobile-searchBar--close");
+    closeSearchBar.addEventListener("click", function () {
+      document.querySelector(".mobile-searchBar").classList.remove("active");
     });
     // Cart icon
     const cartIcon = document.querySelector(".cart-icon__number");

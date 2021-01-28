@@ -76,12 +76,16 @@
     .categories__btn--wrapper {
       position: absolute;
       align-self: center;
-      opacity: 0;
-      visibility: hidden;
+      opacity: 1;
+      visibility: visible;
       transition: $mainTransition;
       .btn {
         padding: 1.7rem 4.5rem;
         transition: $mainTransition;
+      }
+      @media (min-width: 570px) {
+        opacity: 0;
+        visibility: hidden;
       }
     }
   }

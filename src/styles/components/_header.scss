@@ -5,15 +5,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 2rem;
   @media (min-width: 570px) {
     min-height: calc(80vh - 60px);
+    padding: 0;
   }
 
   .banner {
     text-align: center;
     background: rgba(255, 255, 255, 0.55);
     display: inline-block;
-    padding: 1rem 1rem;
+    padding: 2rem 1rem;
     border-radius: $mainRadius;
     @media (min-width: 570px) {
       padding: 2rem 2.3rem;

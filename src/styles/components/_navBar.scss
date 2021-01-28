@@ -8,6 +8,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
 }
 
@@ -64,27 +65,10 @@ nav {
     display: flex;
   }
 
-  .search-bar__mobile--input {
-    transform: translateX(3.5rem);
-    padding: 0 2rem 0 1rem;
-    height: 3.5rem;
-    align-self: center;
-    transition: $mainTransition;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    outline: none;
-    border-radius: 2rem;
-    display: none;
-    &.active {
-      display: block;
-    }
-  }
   .search-icon {
     display: block;
     position: relative;
     transition: $mainTransition;
-    &.active {
-      background: $lightGray;
-    }
     @media (min-width: 860px) {
       display: none;
     }
@@ -103,6 +87,63 @@ nav {
       text-align: center;
       bottom: 2.5rem;
       left: 2rem;
+    }
+  }
+}
+
+.mobile-searchBar {
+  position: absolute;
+  width: 100%;
+  // background: rgba(234, 79, 61, 0.6);
+  background: rgba($darkColor, 0.7);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 8rem;
+  transition: $mainTransition;
+  opacity: 0;
+  visibility: hidden;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+    .mobile-searchBar__form {
+      transform: scale(1);
+    }
+  }
+  &--close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  &__form {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    transform: scale(0.4);
+    transition: $mainTransition;
+  }
+  &__input {
+    width: 100%;
+    align-self: center;
+    padding: 0.7rem 2rem;
+    background: $lightGray;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    outline: 0;
+    appearance: none;
+    transition: $mainTransition;
+    &::placeholder {
+      font-size: inherit;
+      line-height: inherit;
+      color: rgba(0, 0, 0, 0.2);
+    }
+    &:focus {
+      background: $lightColor;
+      border: 1px solid $darkColor;
     }
   }
 }
