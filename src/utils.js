@@ -1,66 +1,64 @@
-import { getCartItems } from "./localStorage";
+import { getCartItems } from './localStorage';
 
 export const parseRequestUrl = () => {
-  const url = document.location.hash.toLowerCase();
-  const request = url.split("/");
-  return {
-    resource: request[1],
-    id: request[2],
-    verb: request[3],
-  };
+	const url = document.location.hash.toLowerCase();
+	const request = url.split('/');
+	return {
+		resource: request[1],
+		id: request[2],
+		verb: request[3],
+	};
 };
 
 export const rerender = async (component) => {
-  document.getElementById(
-    "main-container"
-  ).innerHTML = await component.render();
-  await component.after_render();
+	document.getElementById(
+		'main-container'
+	).innerHTML = await component.render();
+	await component.after_render();
 };
 
 export const showMenu = () => {
-  document.getElementById("menu").classList.add("active");
-  document.querySelector(".menu-overlay").classList.add("active");
-  document.body.style.overflowY = "hidden";
+	document.getElementById('menu').classList.add('active');
+	document.querySelector('.menu-overlay').classList.add('active');
 };
 
 export const hideMenu = () => {
-  document.getElementById("menu").classList.remove("active");
-  document.querySelector(".menu-overlay").classList.remove("active");
-  document.body.style.overflowY = "visible";
+	document.getElementById('menu').classList.remove('active');
+	document.querySelector('.menu-overlay').classList.remove('active');
 };
 
 export const showLoading = () => {
-  const loadingOverlay = document.querySelector(".loading-overlay");
-  loadingOverlay.classList.add("active");
+	const loadingOverlay = document.querySelector('.loading-overlay');
+	loadingOverlay.classList.add('active');
 };
 
 export const hideLoading = () => {
-  const loadingOverlay = document.querySelector(".loading-overlay");
-  loadingOverlay.classList.remove("active");
+	const loadingOverlay = document.querySelector('.loading-overlay');
+	loadingOverlay.classList.remove('active');
 };
 
 export const showMessage = (message, callback) => {
-  const messageOverlay = document.querySelector(".message-overlay");
-  messageOverlay.innerHTML = `
+	const messageOverlay = document.querySelector('.message-overlay');
+	messageOverlay.innerHTML = `
   <div class="message-overlay__container">
     <div class="message-overlay__content">${message}</div>
     <button class="btn message-overlay__close-btn">OK</button>
   </div>
   `;
-  messageOverlay.classList.add("active");
-  const closeBtn = document.querySelector(".message-overlay__close-btn");
-  closeBtn.addEventListener("click", () => {
-    messageOverlay.classList.remove("active");
-    if (callback) {
-      callback();
-    }
-  });
+	messageOverlay.classList.add('active');
+	const closeBtn = document.querySelector('.message-overlay__close-btn');
+	closeBtn.addEventListener('click', () => {
+		messageOverlay.classList.remove('active');
+		if (callback) {
+			callback();
+		}
+	});
 };
 
 export const redirectUser = () => {
-  if (getCartItems().length !== 0) {
-    document.location.hash = "/shipping";
-  } else {
-    document.location.hash = "/";
-  }
+	if (getCartItems().length !== 0) {
+		document.location.hash = '/shipping';
+	} else {
+		document.location.hash = '/';
+	}
 };

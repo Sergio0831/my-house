@@ -1,20 +1,19 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%; // 16px * 62.5 = 10px = 1rem
-  scroll-behavior: smooth;
-  font-family: $textFont;
-  color: $darkColor;
+	font-size: 62.5%; // 16px * 62.5 = 10px = 1rem
+	scroll-behavior: smooth;
+	font-family: $textFont;
+	color: $darkColor;
 }
 
 body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow-x: hidden;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	position: relative;
 }
 
 h1,
@@ -24,79 +23,79 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+	margin: 0;
 }
 
 a {
-  display: inline-block;
-  text-decoration: none;
+	display: inline-block;
+	text-decoration: none;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
 ul,
 li {
-  margin: 0;
-  padding-inline-start: 0;
+	margin: 0;
+	padding-inline-start: 0;
 }
 
 .section-title {
-  margin-bottom: 3rem;
-  text-align: center;
-  font-family: $textFont;
-  font-size: 3.6rem;
-  line-height: 4.3rem;
-  letter-spacing: $mainSpacing;
-  color: $darkColor;
+	margin-bottom: 3rem;
+	text-align: center;
+	font-family: $textFont;
+	font-size: 3.6rem;
+	line-height: 4.3rem;
+	letter-spacing: $mainSpacing;
+	color: $darkColor;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-areas:
-    "nav"
-    "main"
-    "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: 8rem 1fr 19rem;
-  height: 100%;
+	display: grid;
+	grid-template-areas:
+		'nav'
+		'main'
+		'footer';
+	grid-template-columns: 1fr;
+	grid-template-rows: 8rem 1fr 19rem;
+	height: 100%;
 }
 
 .container {
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
+	width: 100%;
+	max-width: 1150px;
+	margin: 0 auto;
 }
 
 main {
-  grid-area: main;
+	grid-area: main;
 }
 
 section {
-  margin-top: 5rem;
+	margin-top: 5rem;
 }
 
 figure {
-  margin: 0;
+	margin: 0;
 }
 
 .error {
-  color: $primaryColor;
-  margin-top: 1rem;
-  font-size: 1.4rem;
-  font-weight: 700;
+	color: $primaryColor;
+	margin-top: 1rem;
+	font-size: 1.4rem;
+	font-weight: 700;
 }
 
 .order-id {
-  width: 53rem;
-  max-width: 100%;
-  margin: 0 auto;
+	width: 53rem;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  justify-content: center;
-  grid-gap: 3rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	justify-content: center;
+	grid-gap: 3rem;
 }
