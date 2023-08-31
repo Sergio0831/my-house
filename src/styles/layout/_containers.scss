@@ -1,0 +1,17 @@
+@use "../abstract" as *;
+
+.container {
+  width: min(73.125rem, 95%);
+  @include ma;
+}
+
+.grid-container {
+  display: $d-grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}

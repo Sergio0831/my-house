@@ -1,0 +1,46 @@
+@use "abstract" as *;
+
+.btn {
+  font-weight: $fw-500;
+  text-transform: uppercase;
+  border-radius: $rounded;
+  transition: background-color $transition-base, color $transition-base;
+  font-family: inherit;
+  color: $light;
+
+  &:hover {
+    background-color: transparent;
+    color: $dark;
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: $primary;
+  border: 1px solid $primary;
+  letter-spacing: 0.1em;
+}
+
+.btn-secondary {
+  @extend .btn;
+  background-color: $secondary;
+  border: 1px solid $secondary;
+  letter-spacing: 0.1em;
+}
+
+.btn-secondary-small {
+  @extend .btn-secondary;
+  font-size: 0.75rem;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: none;
+}
+
+.nav-btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}

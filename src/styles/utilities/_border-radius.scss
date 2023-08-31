@@ -1,0 +1,16 @@
+@use "../abstract" as *;
+
+/* Example .rounded-xl =  */
+@each $rounded-name,
+  $rounded-value
+    in (
+      rounded: $rounded,
+      rounded-md: $rounded-md,
+      rounded-lg: $rounded-lg,
+      rounded-full: $rounded-full
+    )
+{
+  .#{$rounded-name} {
+    border-radius: $rounded-value;
+  }
+}

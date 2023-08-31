@@ -1,0 +1,67 @@
+@use "variables" as *;
+
+/* Font face */
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url("../../assets/fonts/#{$url}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: $style;
+  }
+}
+
+/* Flex */
+@mixin flex-v-center {
+  display: $d-flex;
+  align-items: $align-center;
+}
+
+@mixin flex-h-center {
+  display: $d-flex;
+  justify-content: $align-center;
+}
+
+@mixin flex-all-center {
+  display: $d-flex;
+  align-items: $align-center;
+  justify-content: $align-center;
+}
+
+@mixin flex-all-sb {
+  display: $d-flex;
+  align-items: $align-center;
+  justify-content: space-between;
+}
+
+/* Margin */
+@mixin mr($value) {
+  &:not(:last-child) {
+    margin-right: $value;
+  }
+}
+
+@mixin mb($value) {
+  &:not(:last-child) {
+    margin-bottom: $value;
+  }
+}
+
+@mixin ma {
+  margin: 0 auto;
+}
+
+/* Center */
+@mixin center-Y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Heading */
+@mixin heading($fs, $text-transform, $letter-spacing, $line-height) {
+  font-size: $fs;
+  color: $dark;
+  text-transform: $text-transform;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+}

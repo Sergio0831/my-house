@@ -1,0 +1,141 @@
+@use "abstract" as *;
+@use "components" as *;
+
+.footer {
+  grid-area: "footer";
+  background-color: $gray-light;
+}
+
+.footer__section-heading {
+  margin-bottom: 0.625rem;
+}
+
+.footer__content {
+  display: $d-grid;
+  grid-template-areas:
+    "newsletter"
+    "service"
+    "contact"
+    "socials";
+  text-align: $align-center;
+  row-gap: 1.25rem;
+  padding: 1.625rem 0;
+}
+
+.footer__newsletter {
+  grid-area: newsletter;
+}
+
+.footer__service {
+  grid-area: service;
+}
+
+.footer__contact {
+  grid-area: contact;
+}
+
+.footer__socials {
+  grid-area: socials;
+}
+
+.footer__newsletter-form {
+  margin-top: 0.5rem;
+  column-gap: 5px;
+
+  @include flex-all-center;
+
+  input {
+    padding: 0 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    height: 1.875rem;
+    border-radius: $rounded;
+    border: 1px solid $dark;
+    outline-offset: 2px;
+
+    &::placeholder {
+      letter-spacing: 0.1em;
+    }
+
+    &:focus {
+      outline: 2px solid $secondary;
+    }
+  }
+
+  button {
+    @extend .btn-secondary-small;
+    padding: 0 0.5rem;
+    height: 1.875rem;
+    outline-offset: 2px;
+
+    &:focus {
+      outline: 2px solid $secondary;
+    }
+  }
+}
+
+.footer__service-item,
+.footer__contact-item {
+  @include mb(5px);
+}
+
+.footer__service-link,
+.footer__contact-link {
+  position: $p-relative;
+  color: inherit;
+
+  &::after {
+    content: "";
+    position: $p-absolute;
+    left: 0;
+    bottom: -2px;
+    width: $f-width;
+    height: 2px;
+    background-color: $secondary;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform $transition-base;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.footer__socials-item {
+  display: $d-inline-block;
+  @include mr(0.875rem);
+}
+
+.footer__socials-link {
+  width: 1.75rem;
+  transition: color $transition-base;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: $secondary;
+  }
+}
+
+@include sm {
+  .footer__content {
+    grid-template-areas:
+      "newsletter contact"
+      "service socials";
+  }
+}
+
+@include lg {
+  .footer__content {
+    grid-template-areas: "newsletter service contact socials";
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer__newsletter-form {
+    justify-content: flex-start;
+  }
+}

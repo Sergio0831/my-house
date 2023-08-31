@@ -1,0 +1,16 @@
+@use "../abstract" as *;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: $lato, sans-serif;
+  font-weight: $fw-400;
+  line-height: 150%;
+}
+
+button {
+  cursor: pointer;
+}

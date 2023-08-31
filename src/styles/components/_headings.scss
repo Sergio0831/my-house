@@ -1,0 +1,15 @@
+@use "../abstract/" as *;
+
+.heading-1 {
+  @include heading(clamp(1.75rem, 2vw + 1rem, 2.25rem), uppercase, 0.1em, 120%);
+}
+
+.heading-2 {
+}
+
+.heading-3 {
+  @include heading(1.125rem, capitalize, 1.8px, 150%);
+}
+
+.heading-4 {
+}

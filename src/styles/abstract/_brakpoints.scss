@@ -1,0 +1,71 @@
+$breakpoints: (
+  "xs": 320px,
+  // 320px
+  "sm": 30rem,
+  // 480px
+  "md": 51.25rem,
+  // 820px
+  "lg": 60rem,
+  // 960px
+  "xl": 75rem,
+  // 1200px
+  "xxl": 90rem,
+  // 1440px
+);
+
+@mixin xs {
+  @media only screen and (min-width: map-get($breakpoints, "xs" )) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media only screen and (min-width: map-get($breakpoints, "sm" )) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (min-width: map-get($breakpoints, "md" )) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (min-width: map-get($breakpoints, "lg" )) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media only screen and (min-width: map-get($breakpoints, "xl" )) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media only screen and (min-width: map-get($breakpoints, "xxl" )) {
+    @content;
+  }
+}
+
+// For specific breakpoint
+@mixin breakpoint($bp: 0) {
+  @media only screen and (min-width: $bp) {
+    @content;
+  }
+}
+
+// For from to breakpoint
+@mixin between {
+  @media only screen and (min-width: map-get($breakpoints, "sm" )) and (max-width: map-get($breakpoints, "lg" )) {
+    @content;
+  }
+}
+
+// For screens without hover
+@mixin nonhover {
+  @media only screen and (hover: none) {
+    @content;
+  }
+}

@@ -1,0 +1,29 @@
+@use "../abstract" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  display: $d-inline-block;
+}
+
+img {
+  display: block;
+  width: $f-width;
+  height: auto;
+}
+
+svg {
+  display: $d-block;
+}

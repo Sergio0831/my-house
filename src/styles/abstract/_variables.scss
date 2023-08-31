@@ -1,0 +1,46 @@
+/* Colors */
+$primary: #ea4f3d;
+$secondary: #139ad6;
+$light: #fff;
+$dark: #111;
+$gray: #c0c0c0;
+$gray-light: #f5f5f5;
+
+/* Fonts */
+$lato: "Lato";
+$roboto: "Roboto";
+
+/* Fonts Weight */
+$fw-400: 400;
+$fw-500: 500;
+$fw-700: 700;
+
+/* Display */
+$d-flex: flex;
+$d-grid: grid;
+$d-block: block;
+$d-inline-block: inline-block;
+
+/* Align */
+$align-center: center;
+
+/* Space */
+$f-width: 100%;
+$f-height: 100%;
+
+/* Position */
+$p-absolute: absolute;
+$p-relative: relative;
+$p-fixed: fixed;
+
+/* Border */
+$border-none: none;
+
+/* Border radius */
+$rounded: 0.25rem; /* 4px */
+$rounded-md: 0.5rem; /* 8px */
+$rounded-lg: 0.75rem; /* 12px */
+$rounded-full: 50%;
+
+/* Animation */
+$transition-base: 0.3s ease;
