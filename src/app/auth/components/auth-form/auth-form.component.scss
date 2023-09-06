@@ -1,0 +1,81 @@
+@use "abstract" as *;
+
+.auth-form {
+  text-align: $align-center;
+  background: rgba($gray-light, 0.8);
+  border-radius: $rounded-md;
+  width: min(18.75rem, 80vw);
+  padding: 1.5rem;
+}
+
+.auth-form__title {
+  margin-bottom: 1rem;
+}
+
+.auth-form__group {
+  margin-bottom: 0.6rem;
+}
+
+.auth-form__input {
+  width: $f-width;
+  padding: 0.5rem;
+  border: 1px solid rgba($dark, 0.3);
+  border-radius: $rounded;
+  font-size: 0.875rem;
+
+  @include outline(2px, $secondary);
+}
+
+.auth-form__submit-btn,
+.auth__form-social {
+  font-size: 0.875rem;
+  width: $f-width;
+  padding: 0.5rem;
+
+  @include outline();
+}
+
+.auth-form__link {
+  padding-top: 5px;
+
+  a {
+    color: $primary;
+    @include link-underline($primary, -1px, 1px);
+  }
+}
+
+.auth-form__separator {
+  position: $p-relative;
+  display: $d-block;
+  padding: 2px 0;
+  margin: 0.8rem 0;
+  border-color: $dark;
+
+  &::before,
+  &::after {
+    content: "";
+    position: $p-absolute;
+    width: 40%;
+    top: 50%;
+    height: 1px;
+    background-color: rgba($dark, 0.3);
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.auth__form-social {
+  position: $p-relative;
+
+  svg {
+    position: $p-absolute;
+    width: 1rem;
+    height: 1rem;
+  }
+}

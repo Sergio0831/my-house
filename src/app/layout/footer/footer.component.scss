@@ -2,7 +2,6 @@
 @use "components" as *;
 
 .footer {
-  grid-area: "footer";
   background-color: $gray-light;
 }
 
@@ -24,6 +23,10 @@
 
 .footer__newsletter {
   grid-area: newsletter;
+
+  p {
+    font-size: 0.875rem;
+  }
 }
 
 .footer__service {
@@ -47,30 +50,24 @@
   input {
     padding: 0 0.5rem;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.875rem;
     height: 1.875rem;
     border-radius: $rounded;
-    border: 1px solid $dark;
-    outline-offset: 2px;
+    border: 1px solid rgba($dark, 0.3);
 
     &::placeholder {
       letter-spacing: 0.1em;
     }
 
-    &:focus {
-      outline: 2px solid $secondary;
-    }
+    @include outline(2px, $secondary);
   }
 
   button {
-    @extend .btn-secondary-small;
     padding: 0 0.5rem;
     height: 1.875rem;
-    outline-offset: 2px;
+    text-transform: uppercase;
 
-    &:focus {
-      outline: 2px solid $secondary;
-    }
+    @include outline(2px, $secondary);
   }
 }
 
@@ -81,27 +78,9 @@
 
 .footer__service-link,
 .footer__contact-link {
-  position: $p-relative;
+  font-size: 0.875rem;
   color: inherit;
-
-  &::after {
-    content: "";
-    position: $p-absolute;
-    left: 0;
-    bottom: -2px;
-    width: $f-width;
-    height: 2px;
-    background-color: $secondary;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform $transition-base;
-  }
-
-  &:hover::after,
-  &:focus::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
+  @include link-underline($secondary);
 }
 
 .footer__socials-item {

@@ -9,14 +9,10 @@ import { HeaderComponent } from './layout/header/header.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { HomeComponent } from './pages/home/home.component';
-import {
-  NgOptimizedImage,
-  IMAGE_LOADER,
-  ImageLoaderConfig,
-  provideImageKitLoader,
-} from '@angular/common';
+import { NgOptimizedImage, provideImageKitLoader } from '@angular/common';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +31,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
     NgOptimizedImage,
+    AuthModule,
   ],
   providers: [provideImageKitLoader('https://ik.imagekit.io/snsljr2ra/')],
   bootstrap: [AppComponent],

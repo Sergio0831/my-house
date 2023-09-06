@@ -57,11 +57,44 @@
   transform: translateY(-50%);
 }
 
+/* Outline */
+@mixin outline($offset: 2px, $color: $primary) {
+  outline-offset: $offset;
+
+  &:focus {
+    outline: $offset solid $color;
+  }
+}
+
 /* Heading */
-@mixin heading($fs, $text-transform, $letter-spacing, $line-height) {
+@mixin heading($fs, $text-transform) {
   font-size: $fs;
   color: $dark;
   text-transform: $text-transform;
-  letter-spacing: $letter-spacing;
-  line-height: $line-height;
+  letter-spacing: 0.1em;
+  line-height: 120%;
+}
+
+/* Link with underline */
+@mixin link-underline($color, $bottom: -2px, $height: 2px) {
+  position: $p-relative;
+
+  &::after {
+    content: "";
+    position: $p-absolute;
+    left: 0;
+    bottom: $bottom;
+    width: $f-width;
+    height: $height;
+    background-color: $color;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform $transition-base;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }

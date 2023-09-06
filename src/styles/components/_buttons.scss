@@ -2,10 +2,14 @@
 
 .btn {
   font-weight: $fw-500;
-  text-transform: uppercase;
   border-radius: $rounded;
-  transition: background-color $transition-base, color $transition-base;
+
   font-family: inherit;
+}
+
+.btn-fill {
+  @extend .btn;
+  transition: background-color $transition-base, color $transition-base;
   color: $light;
 
   &:hover {
@@ -15,14 +19,14 @@
 }
 
 .btn-primary {
-  @extend .btn;
+  @extend .btn-fill;
   background-color: $primary;
   border: 1px solid $primary;
   letter-spacing: 0.1em;
 }
 
 .btn-secondary {
-  @extend .btn;
+  @extend .btn-fill;
   background-color: $secondary;
   border: 1px solid $secondary;
   letter-spacing: 0.1em;
@@ -31,6 +35,12 @@
 .btn-secondary-small {
   @extend .btn-secondary;
   font-size: 0.75rem;
+}
+
+.btn-outline {
+  @extend .btn;
+  background-color: transparent;
+  border: 1px solid rgba($dark, 0.3);
 }
 
 .btn-transparent {

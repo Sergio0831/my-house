@@ -1,0 +1,13 @@
+@use "abstract" as *;
+
+.register {
+  position: $p-relative;
+  height: $f-height;
+
+  @include flex-all-center;
+}
+
+.register__image {
+  object-fit: cover;
+  z-index: -1;
+}

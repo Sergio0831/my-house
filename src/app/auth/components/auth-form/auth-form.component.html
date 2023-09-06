@@ -1,0 +1,20 @@
+<form class="auth-form">
+  <h1 class="auth-form__title heading-2">{{title}}</h1>
+  <div class="auth-form__group">
+    <input type="text" name="email" aria-label="email" placeholder="Email" class="auth-form__input">
+  </div>
+  <div class="auth-form__group">
+    <input type="password" name="password" aria-label="password" placeholder="Create Password" class="auth-form__input">
+  </div>
+  <div class="auth-form__group" *ngIf="showRepeatPassword">
+    <input type="password" name="confirm-password" aria-label="confirm-password" placeholder="Confirm Password"
+      class="auth-form__input">
+  </div>
+  <button type="submit" class="auth-form__submit-btn btn-primary">{{title}}</button>
+  <p class="auth-form__link">Already have an account? <a routerLink="/login">Login</a></p>
+  <span class="auth-form__separator">Or</span>
+  <button type="button" class="auth__form-social btn-outline">
+    <svg-icon src="assets/svg/google-icon.svg"></svg-icon>
+    Login with Google
+  </button>
+</form>

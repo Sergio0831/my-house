@@ -1,11 +1,9 @@
 @use "abstract" as *;
 
 .header {
-  grid-area: "header";
   height: 5rem;
   background-color: $light;
   width: $f-width;
-  z-index: 2;
 }
 
 .header__content {
