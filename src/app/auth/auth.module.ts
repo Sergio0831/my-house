@@ -4,8 +4,16 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { SharedLayoutComponent } from './components/shared-layout/shared-layout.component';
+import { LoginComponent } from './components/login/login.component';
 
-const routes: Routes = [{ path: 'register', component: RegisterComponent }];
+const routes: Routes = [
+  { path: 'signup', component: RegisterComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+];
 
 @NgModule({
   imports: [
@@ -15,6 +23,11 @@ const routes: Routes = [{ path: 'register', component: RegisterComponent }];
     AngularSvgIconModule.forRoot(),
   ],
   exports: [RouterModule],
-  declarations: [RegisterComponent, AuthFormComponent],
+  declarations: [
+    RegisterComponent,
+    AuthFormComponent,
+    SharedLayoutComponent,
+    LoginComponent,
+  ],
 })
 export class AuthModule {}

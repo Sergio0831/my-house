@@ -6,8 +6,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./auth-form.component.scss'],
 })
 export class AuthFormComponent {
-  @Input() title = 'Signup';
+  @Input() title = '';
   @Input() showRepeatPassword = true;
+  @Input() accountText = '';
+  @Input() linkText = '';
+  @Input() linkUrl = '';
   @Input() passwordPlaceholder = 'Create Password';
 
   @Output() formSubmit = new EventEmitter<any>();

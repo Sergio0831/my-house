@@ -48,11 +48,11 @@ button[type="submit"] {
   background-color: transparent;
   border: $border-none;
   left: 0.5rem;
+  color: rgba($dark, 0.6);
 
   @include center-Y;
 
   svg {
-    fill: rgba($dark, 0.7);
     width: 1.125rem;
     height: 1.125rem;
   }
@@ -61,24 +61,13 @@ button[type="submit"] {
 input[type="search"] {
   width: $f-width;
   left: 1rem;
-  background-color: $gray-light;
-  border: 1px solid rgba($dark, 0.3);
-  color: rgba($dark, 0.8);
+  border: 1px solid $input-border;
   padding: 0.5rem 2rem;
   border-radius: $rounded-md;
   font-size: 1rem;
   outline: none;
   appearance: none;
-  transition: background-color $transition-base, border-color $transition-base;
+  transition: border-color $transition-base;
 
-  &::placeholder {
-    font-size: inherit;
-    line-height: inherit;
-    color: rgba($dark, 0.7);
-  }
-
-  &:focus {
-    background-color: $light;
-    border: 1px solid $dark;
-  }
+  @include input-outline;
 }

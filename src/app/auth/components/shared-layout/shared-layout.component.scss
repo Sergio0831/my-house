@@ -1,0 +1,13 @@
+@use "abstract" as *;
+
+.auth-layout {
+  position: $p-relative;
+  height: $f-height;
+
+  @include flex-all-center;
+}
+
+.auth-layout__image {
+  object-fit: cover;
+  z-index: -1;
+}

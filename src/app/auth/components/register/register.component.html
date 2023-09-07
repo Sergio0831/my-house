@@ -1,5 +1,3 @@
-<div class="container register">
-  <img ngSrc="my-house/signup.jpg" fill alt="Office" class="register__image" loading="lazy" sizes="min(73.125rem, 95%)"
-    ngSrcset="1080w, 1200w" />
-  <app-auth-form></app-auth-form>
-</div>
+<app-shared-layout [imageSrc]="'signup.jpg'">
+  <app-auth-form title="Signup" linkText="Login" accountText="Already" linkUrl="/login"></app-auth-form>
+</app-shared-layout>

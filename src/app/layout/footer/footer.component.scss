@@ -55,11 +55,7 @@
     border-radius: $rounded;
     border: 1px solid rgba($dark, 0.3);
 
-    &::placeholder {
-      letter-spacing: 0.1em;
-    }
-
-    @include outline(2px, $secondary);
+    @include input-outline;
   }
 
   button {
@@ -67,7 +63,7 @@
     height: 1.875rem;
     text-transform: uppercase;
 
-    @include outline(2px, $secondary);
+    @include btn-outline(2px, $secondary);
   }
 }
 

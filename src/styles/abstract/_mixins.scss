@@ -58,11 +58,19 @@
 }
 
 /* Outline */
-@mixin outline($offset: 2px, $color: $primary) {
+@mixin btn-outline($offset: 2px, $color: $primary) {
   outline-offset: $offset;
 
   &:focus {
     outline: $offset solid $color;
+  }
+}
+
+@mixin input-outline {
+  outline: none;
+
+  &:focus {
+    border-color: $secondary;
   }
 }
 
@@ -71,7 +79,7 @@
   font-size: $fs;
   color: $dark;
   text-transform: $text-transform;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   line-height: 120%;
 }
 

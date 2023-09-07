@@ -2,9 +2,9 @@
 
 .auth-form {
   text-align: $align-center;
-  background: rgba($gray-light, 0.8);
+  background: rgba($gray-light, 0.9);
   border-radius: $rounded-md;
-  width: min(18.75rem, 80vw);
+  width: min(20rem, 80vw);
   padding: 1.5rem;
 }
 
@@ -13,30 +13,30 @@
 }
 
 .auth-form__group {
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .auth-form__input {
   width: $f-width;
-  padding: 0.5rem;
-  border: 1px solid rgba($dark, 0.3);
+  padding: 0.6rem;
+  border: 1px solid #cfcfcf;
   border-radius: $rounded;
   font-size: 0.875rem;
 
-  @include outline(2px, $secondary);
+  @include input-outline;
 }
 
 .auth-form__submit-btn,
 .auth__form-social {
   font-size: 0.875rem;
   width: $f-width;
-  padding: 0.5rem;
+  padding: 0.6rem;
 
-  @include outline();
+  @include btn-outline();
 }
 
 .auth-form__link {
-  padding-top: 5px;
+  padding-top: 0.5rem;
 
   a {
     color: $primary;

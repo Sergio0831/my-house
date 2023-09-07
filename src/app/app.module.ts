@@ -33,7 +33,9 @@ import { AuthModule } from './auth/auth.module';
     NgOptimizedImage,
     AuthModule,
   ],
-  providers: [provideImageKitLoader('https://ik.imagekit.io/snsljr2ra/')],
+  providers: [
+    provideImageKitLoader('https://ik.imagekit.io/snsljr2ra/my-house/'),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
